@@ -1,4 +1,5 @@
 ---
+name: podcast-series
 description: Interactive series planning skill for podcast AI skills. Asks five questions to understand the topic, audience, and scope, then produces a complete episode-by-episode series plan with titles, teaching points, and scripture references. Use alongside the Research Foundation skill.
 ---
 
