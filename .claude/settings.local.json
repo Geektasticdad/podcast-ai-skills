@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python inspect-template.py)",
+      "Bash(python update-template.py)",
+      "Bash(python generate-docx.py episode-template.json)",
+      "Bash(del episode-template-test.docx)",
+      "Bash(del Episode_1.docx)",
+      "Bash(Remove-Item \"D:\\\\github\\\\podcast-ai-skills\\\\podcast-episode\\\\podcast-episode-narrative\\\\Episode_1.docx\" -ErrorAction SilentlyContinue)",
+      "Bash(Remove-Item \"D:\\\\github\\\\podcast-ai-skills\\\\podcast-episode\\\\podcast-episode-narrative\\\\inspect-template.py\")",
+      "Bash(Remove-Item \"D:\\\\github\\\\podcast-ai-skills\\\\podcast-episode\\\\podcast-episode-narrative\\\\update-template.py\")",
+      "Bash(Write-Host \"Cleaned up\")",
+      "PowerShell(Remove-Item *)"
+    ]
+  }
+}
