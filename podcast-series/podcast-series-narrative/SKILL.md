@@ -7,27 +7,27 @@ description: Full episode narrative skill. Takes a completed episode outline fro
 
 This skill takes a completed episode outline and writes the full spoken narrative for every section. The output is formatted for Microsoft Word — ready to open, review, and record from.
 
-This is a single-input skill. Paste the outline and the full narrative is produced. No additional questions.
+This skill asks two questions before producing the narrative.
 
 **Requires:** Load the Research Foundation skill (`foundation/SKILL.md`) alongside this skill before you begin.
 
----
+## Inputs
 
-## Input
+Ask the user two questions in sequence. Wait for each answer before asking the next.
 
+**Question 1:**
 "Paste the full output from your `podcast-series-outline` for the episode you want to write."
 
-Once the outline is pasted, produce the complete narrative document without asking further questions.
+**Question 2:**
+"What is the episode number? If not yet assigned, type TBD."
 
----
+Once you have both answers, produce the complete narrative document. Do not ask any further questions.
 
 ## Output Format
 
 Format the entire output for Microsoft Word. Use clear headings for each section, leave space between sections, and label word counts at the end of each section so Jason can check length at a glance. The document should be ready to read aloud without any cleanup.
 
 All scripture references must use the NIV translation.
-
----
 
 ## Section 1: Introduction
 
@@ -48,8 +48,6 @@ All scripture references must use the NIV translation.
    - Explain why this topic matters to everyday Christians.
    - Create anticipation for the deeper discussion ahead.
 
----
-
 ## Section 2: Series Recap
 
 **Length:** 260–390 words (approximately 2–3 minutes spoken)
@@ -64,8 +62,6 @@ All scripture references must use the NIV translation.
 2. Bridge to This Episode
    - Explain how today's topic flows naturally from what came before.
    - Build anticipation by hinting at what this episode will add to the series.
-
----
 
 ## Section 3: Topic Introduction
 
@@ -92,8 +88,6 @@ All scripture references must use the NIV translation.
    - Connect the ancient biblical context to modern Christian life.
    - Explain why this topic is still deeply relevant for believers today.
    - Provide practical examples that listeners can relate to.
-
----
 
 ## Section 4: Topic Discussion
 
@@ -128,8 +122,6 @@ Write one narrative segment per subsection from the outline. Label each subsecti
    - Provide practical examples or questions listeners can reflect on.
    - Encourage listeners to consider how the teaching might impact their faith, choices, or perspective.
 
----
-
 ## Section 5: Conclusion
 
 **Length:** 150–300 words (approximately 1–2 minutes spoken)
@@ -161,8 +153,6 @@ Write one narrative segment per subsection from the outline. Label each subsecti
 6. End with Encouragement
    - Close with an uplifting statement that encourages listeners in their faith journey.
    - The ending should feel natural for a podcast and leave listeners feeling encouraged and hopeful.
-
----
 
 ## Next Step
 

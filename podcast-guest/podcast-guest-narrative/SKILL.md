@@ -7,29 +7,29 @@ description: Guest interview narrative skill. Takes a completed guest interview 
 
 This skill takes a completed guest interview outline and produces a full production-ready document for the episode. It includes a host introduction script, on-air questions for every section, a listener call-to-action where applicable, and a closing script.
 
-This is a single-input skill. Paste the outline and the full document is produced. No additional questions.
+This skill asks two questions before producing the document.
 
 **Requires:** Load the Research Foundation skill (`foundation/SKILL.md`) alongside this skill before you begin.
 
----
+## Inputs
 
-## Input
+Ask the user two questions in sequence. Wait for each answer before asking the next.
 
+**Question 1:**
 "Paste the full output from your `podcast-guest-outline` for the guest you want to interview."
 
-Once the outline is pasted, produce the complete document without asking further questions.
+**Question 2:**
+"What is the episode number? If not yet assigned, type TBD."
 
----
+Once you have both answers, produce the complete document. Do not ask any further questions.
 
 ## Output Format
 
-Format the entire output for Microsoft Word. Use clear emoji section headers, horizontal rules between sections, and leave space between questions so the document is easy to read during recording. Label word counts at the end of the Introduction and Conclusion so Jason can check length at a glance.
+Format the entire output for Microsoft Word. Use clear emoji section headers, leave space between sections, and leave space between questions so the document is easy to read during recording. Label word counts at the end of the Introduction and Conclusion so Jason can check length at a glance.
 
 All scripture references must use the NIV translation.
 
 Produce every section below in order. If the guest's outline shows no product, service, or event, omit Sections 4 and 5 entirely.
-
----
 
 ## 🎤 Introduction
 
@@ -41,8 +41,6 @@ Write a warm and welcoming host script for Jason to read aloud at the start of t
 - Mention the guest's website if one was provided.
 - Include a brief mention of any product, service, or event if applicable.
 - End with a natural transition that invites the guest into the conversation and leads into the icebreaker questions.
-
----
 
 ## 👋 On-Air Icebreaker Questions
 
@@ -59,8 +57,6 @@ For each question, include an indented follow-up prompt labeled *Follow-up:*
 
 (Continue for all icebreaker questions.)
 
----
-
 ## ✝️ Faith Questions
 
 List 6–10 faith-based questions as a numbered list. Questions should explore the guest's testimony, relationship with Christ, spiritual growth, and biblical perspective on the episode topic. Progress from personal story toward broader application and insight.
@@ -73,8 +69,6 @@ For each question, include an indented follow-up prompt labeled *Follow-up:*
    - *Follow-up:* [Prompt]
 
 (Continue for all faith questions.)
-
----
 
 ## 🛍️ Product, Service, or Event Questions
 
@@ -91,15 +85,11 @@ For each question, include an indented follow-up prompt labeled *Follow-up:*
 
 (Continue for all product/service/event questions.)
 
----
-
 ## 📣 Listener Call-to-Action
 
 *(Omit this section entirely if the outline shows no product, service, or event.)*
 
 Write 2–3 sentences of ready-to-read promotional copy for Jason to deliver on-air. It should direct listeners to the guest's product, service, or event and include any relevant details from the outline such as a website URL, event date, or offer. Write in Jason's voice — warm, conversational, and encouraging. Do not use em dashes.
-
----
 
 ## 🙏 Conclusion
 
@@ -111,8 +101,6 @@ Write a warm and thoughtful closing script for Jason to read aloud. It should:
 - Direct listeners to the guest's website and social media.
 - Include a brief final mention of any product, service, or event if applicable.
 - Close with an encouraging send-off for both the guest and the listeners that feels natural for a podcast ending.
-
----
 
 ## Next Step
 
