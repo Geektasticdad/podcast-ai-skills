@@ -1,20 +1,22 @@
 """
 generate-docx.py
 
-Generates a formatted episode narrative Word document from a JSON episode file,
+Generates a formatted guest interview Word document from a JSON guest file,
 using Episode TBD.docx as the style template.
 
 Usage:
-  python generate-docx.py                        # reads episode.json
-  python generate-docx.py my-episode.json        # reads a specific file
+  python generate-docx.py                        # reads guest.json
+  python generate-docx.py my-guest.json          # reads a specific file
 
-See episode-template.json for the expected JSON structure.
+See guest-template.json for the expected JSON structure.
+
+Sections with type "prose" render as headed paragraphs.
+Sections with type "questions" render as numbered questions with italic follow-up prompts.
 
 Styles inherited from Episode TBD.docx:
-  Title          - episode title      (Arial 26pt, black)
+  Title          - document title     (Arial 26pt, black)
   Heading 1      - section headings   (Arial 20pt, black)
-  Heading 2      - subsection heads   (Arial 16pt, black, spaced)
-  Normal         - body paragraphs    (Arial 11pt, ~14pt after, 1.38x leading)
+  Normal         - body paragraphs and questions (Arial 11pt, ~14pt after, 1.38x leading)
   List Paragraph - reference items
 """
 
@@ -23,13 +25,14 @@ import sys
 from pathlib import Path
 
 from docx import Document
+from docx.shared import Pt
 
 TEMPLATE = Path(__file__).parent / "Episode TBD.docx"
 
 
 # ── JSON LOADER ───────────────────────────────────────────────────────────────
 
-def load_episode(path: Path) -> dict:
+def load_guest(path: Path) -> dict:
     with open(path, encoding="utf-8") as f:
         return json.load(f)
 
@@ -66,34 +69,43 @@ def para(doc, text, style_name):
     return p
 
 
-def build_document(ep: dict):
+def add_questions(doc, questions):
+    """Add numbered questions with indented italic follow-up prompts."""
+    for i, q in enumerate(questions, 1):
+        qp = doc.add_paragraph(f"{i}. {q['question']}")
+        qp.style = resolve_style(doc, "Normal")
+
+        fp = doc.add_paragraph()
+        fp.style = resolve_style(doc, "Normal")
+        fp.paragraph_format.left_indent = Pt(36)
+        fp.add_run(f"Follow-up: {q['followup']}").italic = True
+
+
+def build_document(guest: dict):
     _style_cache.clear()
     doc = Document(TEMPLATE)
     clear_body(doc)
 
-    para(doc, ep["title"], "Title")
+    para(doc, guest["title"], "Title")
 
-    for section in ep["sections"]:
+    for section in guest["sections"]:
         para(doc, section["heading"], "Heading 1")
 
-        if "paragraphs" in section:
+        if section["type"] == "prose":
             for text in section["paragraphs"]:
                 para(doc, text, "Normal")
+            if "word_count" in section:
+                wcp = doc.add_paragraph()
+                wcp.style = resolve_style(doc, "Normal")
+                wcp.add_run(f"[Word count: ~{section['word_count']} words]").italic = True
 
-        if "subsections" in section:
-            for sub in section["subsections"]:
-                para(doc, sub["heading"], "Heading 2")
-                for text in sub["paragraphs"]:
-                    para(doc, text, "Normal")
-
-    para(doc, "Reference Materials:", "Heading 1")
-    for ref in ep["references"]:
-        para(doc, ref, "List Paragraph")
+        elif section["type"] == "questions":
+            add_questions(doc, section["questions"])
 
     p = para(doc, "", "Normal")
-    p.add_run("Ready for recording. Episode is approved and production-ready.").font.italic = True
+    p.add_run("Ready for recording. Guest interview document is approved and production-ready.").italic = True
 
-    out = Path(__file__).parent / ep["output"]
+    out = Path(__file__).parent / guest["output"]
     doc.save(out)
     print(f"Saved: {out}")
 
@@ -104,11 +116,11 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         json_path = Path(sys.argv[1])
     else:
-        json_path = Path(__file__).parent / "episode.json"
+        json_path = Path(__file__).parent / "guest.json"
 
     if not json_path.exists():
         print(f"Error: JSON file not found — {json_path}")
-        print("Usage: python generate-docx.py [episode.json]")
+        print("Usage: python generate-docx.py [guest.json]")
         sys.exit(1)
 
-    build_document(load_episode(json_path))
+    build_document(load_guest(json_path))

@@ -1,0 +1,86 @@
+{
+  "title": "Episode TBD: Guest Name",
+  "sections": [
+    {
+      "type": "prose",
+      "heading": "🎤 Introduction",
+      "paragraphs": [
+        "[Opening hook that draws listeners into the conversation and connects them to the topic.]",
+        "[Introduction of the guest by name with a brief, compelling description of who they are and what they do. Mention website if provided.]",
+        "[Brief mention of any product, service, or event if applicable. Omit if none.]",
+        "[Natural transition that invites the guest into the conversation and leads into the icebreaker questions.]"
+      ],
+      "word_count": 200
+    },
+    {
+      "type": "questions",
+      "heading": "👋 On-Air Icebreaker Questions",
+      "questions": [
+        {
+          "question": "What is your favorite Bible verse, and why does it speak to you personally?",
+          "followup": "Has that verse carried a different meaning for you in different seasons of life?"
+        },
+        {
+          "question": "[Icebreaker question]",
+          "followup": "[Follow-up prompt]"
+        },
+        {
+          "question": "[Icebreaker question]",
+          "followup": "[Follow-up prompt]"
+        }
+      ]
+    },
+    {
+      "type": "questions",
+      "heading": "✝️ Faith Questions",
+      "questions": [
+        {
+          "question": "[Faith question exploring the guest's testimony or relationship with Christ]",
+          "followup": "[Follow-up prompt]"
+        },
+        {
+          "question": "[Faith question exploring spiritual growth or biblical perspective on the episode topic]",
+          "followup": "[Follow-up prompt]"
+        },
+        {
+          "question": "[Faith question moving toward broader application and insight]",
+          "followup": "[Follow-up prompt]"
+        }
+      ]
+    },
+    {
+      "type": "questions",
+      "heading": "🛍️ Product, Service, or Event Questions",
+      "questions": [
+        {
+          "question": "[Question allowing the guest to describe their offering in their own words]",
+          "followup": "[Follow-up prompt]"
+        },
+        {
+          "question": "[Question about why this offering matters to listeners]",
+          "followup": "[Follow-up prompt]"
+        }
+      ]
+    },
+    {
+      "type": "prose",
+      "heading": "📣 Listener Call-to-Action",
+      "paragraphs": [
+        "[2-3 sentences of ready-to-read promotional copy in Jason's voice directing listeners to the guest's product, service, or event. Include website URL, event date, or offer details as applicable.]"
+      ]
+    },
+    {
+      "type": "prose",
+      "heading": "🙏 Conclusion",
+      "paragraphs": [
+        "[Warm, genuine thanks to the guest that references something specific from their story or the conversation.]",
+        "[One sentence summarizing what listeners heard or learned from this episode.]",
+        "[Direction to the guest's website and social media.]",
+        "[Brief final mention of any product, service, or event if applicable. Omit if none.]",
+        "[Encouraging send-off for both guest and listeners that feels natural for a podcast ending.]"
+      ],
+      "word_count": 150
+    }
+  ],
+  "output": "Episode_TBD_GuestName.docx"
+}

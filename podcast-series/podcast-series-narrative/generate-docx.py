@@ -1,14 +1,14 @@
 """
 generate-docx.py
 
-Generates a formatted episode narrative Word document from a JSON episode file,
+Generates a formatted series episode narrative Word document from a JSON episode file,
 using Episode TBD.docx as the style template.
 
 Usage:
-  python generate-docx.py                        # reads episode.json
-  python generate-docx.py my-episode.json        # reads a specific file
+  python generate-docx.py                          # reads series.json
+  python generate-docx.py my-episode.json          # reads a specific file
 
-See episode-template.json for the expected JSON structure.
+See series-template.json for the expected JSON structure.
 
 Styles inherited from Episode TBD.docx:
   Title          - episode title      (Arial 26pt, black)
@@ -104,11 +104,11 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         json_path = Path(sys.argv[1])
     else:
-        json_path = Path(__file__).parent / "episode.json"
+        json_path = Path(__file__).parent / "series.json"
 
     if not json_path.exists():
         print(f"Error: JSON file not found — {json_path}")
-        print("Usage: python generate-docx.py [episode.json]")
+        print("Usage: python generate-docx.py [series.json]")
         sys.exit(1)
 
     build_document(load_episode(json_path))
