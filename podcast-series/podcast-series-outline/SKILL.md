@@ -1,6 +1,6 @@
 ---
 name: podcast-series-outline
-description: Episode outline skill. Takes a single episode from the podcast-series output and builds a detailed, time-stamped outline with scripture support, theological commentary, cultural context, and real-world application. Outputs plain text in the chat. Use alongside the Research Foundation skill.
+description: Episode outline skill. Takes a single episode from the podcast-series-planner output and builds a detailed, time-stamped outline with scripture support, theological commentary, cultural context, and real-world application. Outputs plain text in the chat. Use alongside the Research Foundation skill.
 ---
 
 # Episode Outline Builder
@@ -18,7 +18,7 @@ Output is plain text directly in the chat. Do not create or offer to export a Wo
 Before building the outline, ask the user the following questions in sequence. Wait for each answer before asking the next.
 
 **Question 1:**
-"Paste the episode details from your `podcast-series` output for the episode you want to outline."
+"Paste the episode details from your `podcast-series-planner` output for the episode you want to outline."
 
 **Question 2:**
 "How long should this episode be in minutes?"

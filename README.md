@@ -1,6 +1,6 @@
 # Podcast AI Skills
 
-A collection of Claude skills for planning, outlining, writing podcast episodes, and researching guests. Every skill in this collection is built for the My Ministry Mission podcast hosted by Jason McConnell.
+A collection of Claude skills for planning, outlining, writing, and publishing podcast episodes. Every skill in this collection is built for the My Ministry Mission podcast hosted by Jason McConnell.
 
 ---
 
@@ -11,6 +11,7 @@ A collection of Claude skills for planning, outlining, writing podcast episodes,
 - [Podcast Series Workflow](#podcast-series-workflow)
 - [Standalone Episode Workflow](#standalone-episode-workflow)
 - [Guest Workflow](#guest-workflow)
+- [Publication Workflow](#publication-workflow)
 - [Reference Files](#reference-files)
 
 ---
@@ -34,32 +35,38 @@ Open a new Claude conversation. Paste the full contents of `foundation/SKILL.md`
 |---|---|---|
 | Foundation | `foundation/` | Shared guardrails, voice, and output standards. Required with every skill. |
 
-**Series Workflow**
+**Series Workflow** — `podcast-series/`
 
 | Skill | Folder | What It Does |
 |---|---|---|
-| Series Planner | `podcast-series/` | Interactive. Asks 5 questions, then produces a full series plan with episode breakdown. |
-| Series Consistency Check | `podcast-series-check/` | Quality-checks a completed series plan against 6 criteria. Flags problems only — does not rewrite. |
-| Series Episode Outline | `podcast-series-outline/` | Builds a detailed, time-stamped episode outline with scripture, commentary, and application. |
-| Series Episode Narrative | `podcast-series-narrative/` | Writes the full read-aloud narrative for every section of a completed series episode outline. |
-| Series Context Log | `podcast-series-context-log/` | Generates a compact log entry after each episode. Paste it into the next episode's outline to maintain continuity. |
+| Series Planner | `podcast-series/podcast-series-planner/` | Interactive. Asks 5 questions, then produces a full series plan with episode breakdown. |
+| Series Consistency Check | `podcast-series/podcast-series-check/` | Quality-checks a completed series plan against 6 criteria. Flags problems only — does not rewrite. |
+| Series Episode Outline | `podcast-series/podcast-series-outline/` | Builds a detailed, time-stamped episode outline with scripture, commentary, and application. |
+| Series Episode Narrative | `podcast-series/podcast-series-narrative/` | Writes the full read-aloud narrative for every section of a completed series episode outline. |
+| Series Context Log | `podcast-series/podcast-series-context-log/` | Generates a compact log entry after each episode. Paste it into the next episode's outline to maintain continuity. |
 
-**Standalone Episode Workflow**
-
-| Skill | Folder | What It Does |
-|---|---|---|
-| Episode Ideas | `podcast-episode-ideas/` | Generates 3–5 standalone episode ideas for a given theme. Not tied to a series. |
-| Episode Outline | `podcast-episode-outline/` | Builds a detailed, time-stamped outline for a standalone episode. No series recap or continuity tracking. |
-| Episode Narrative | `podcast-episode-narrative/` | Writes the full read-aloud narrative for every section of a completed standalone episode outline. |
-
-**Guest Workflow**
+**Standalone Episode Workflow** — `podcast-episode/`
 
 | Skill | Folder | What It Does |
 |---|---|---|
-| Guest Research | `podcast-guest-research/` | Asks 6 questions, researches the guest online, then produces a research brief with theological alignment check and Go/No-Go recommendation. Requires web browsing. |
-| Guest Interview Outline | `podcast-guest-outline/` | Builds a structured interview outline with introduction, icebreakers, faith questions, product/service/event questions, and a conclusion. |
-| Guest Interview Narrative | `podcast-guest-narrative/` | Writes the full production document: host scripts, on-air questions with follow-up prompts, listener call-to-action, and closing. Formatted for Microsoft Word. |
-| Guest Rundown Email | `podcast-guest-rundown/` | Generates a plain-text prep email from Jason to the guest summarizing the question areas and episode format. Ready to copy and paste. |
+| Episode Ideas | `podcast-episode/podcast-episode-ideas/` | Generates 3–5 standalone episode ideas for a given theme. Not tied to a series. |
+| Episode Outline | `podcast-episode/podcast-episode-outline/` | Builds a detailed, time-stamped outline for a standalone episode. No series recap or continuity tracking. |
+| Episode Narrative | `podcast-episode/podcast-episode-narrative/` | Writes the full read-aloud narrative for every section of a completed standalone episode outline. |
+
+**Publication**
+
+| Skill | Folder | What It Does |
+|---|---|---|
+| Publication Pack | `podcast-publication/` | Scans a finished transcript and produces three outputs: a Bible reference line, a 75–150 word episode description, and a social media pack with SEO summary, keywords, Facebook posts, X posts, and hashtags. |
+
+**Guest Workflow** — `podcast-guest/`
+
+| Skill | Folder | What It Does |
+|---|---|---|
+| Guest Research | `podcast-guest/podcast-guest-research/` | Asks 6 questions, researches the guest online, then produces a research brief with theological alignment check and Go/No-Go recommendation. Requires web browsing. |
+| Guest Interview Outline | `podcast-guest/podcast-guest-outline/` | Builds a structured interview outline with introduction, icebreakers, faith questions, product/service/event questions, and a conclusion. |
+| Guest Interview Narrative | `podcast-guest/podcast-guest-narrative/` | Writes the full production document: host scripts, on-air questions with follow-up prompts, listener call-to-action, and closing. Formatted for Microsoft Word. |
+| Guest Rundown Email | `podcast-guest/podcast-guest-rundown/` | Generates a plain-text prep email from Jason to the guest summarizing the question areas and episode format. Ready to copy and paste. |
 
 ---
 
@@ -69,7 +76,7 @@ Follow these steps in order when building a new series.
 
 ### Step 1: Plan the Series
 
-Run `podcast-series`. It will ask five questions about your topic, audience, anchor scripture, episode count, and any ideas you already have. Once you answer all five, it produces the full series plan.
+Run `podcast-series-planner`. It will ask five questions about your topic, audience, anchor scripture, episode count, and any ideas you already have. Once you answer all five, it produces the full series plan.
 
 ### Step 2: Build the First Episode Outline
 
@@ -145,6 +152,24 @@ Run `podcast-guest-rundown`. Attach or paste the guest narrative document and pr
 
 ```
 Step 1: Research  →  Step 2: Interview Outline  →  Step 3: Narrative  →  Step 4: Rundown Email
+```
+
+---
+
+## Publication Workflow
+
+Use this after any episode is recorded and a transcript is available. It applies to series episodes, standalone episodes, and guest interviews equally.
+
+### Step 1: Generate the Publication Pack
+
+Run `podcast-publication`. It will ask four questions: the transcript, the episode title, series name and episode number (if applicable), and the listen URL. It produces three outputs in a single run:
+
+1. **Bible Reference Line** — every scripture cited in the episode, normalized and ready to paste into show notes.
+2. **Episode Description** — a 75–150 word description written in Jason's voice, ready to publish on the podcast host platform.
+3. **Social Media Pack** — an SEO summary, 5–10 keywords, 3 Facebook post options, 3 X post options (280 characters or fewer each, with character counts), and the top 5 hashtags.
+
+```
+Transcript  →  podcast-publication  →  Bible References + Episode Description + Social Media Pack
 ```
 
 ---
