@@ -46,7 +46,9 @@ The docx saves to the current working directory as `Episode_[Episode Number].doc
 
 ## JSON Schema
 
-Generate the narrative following this exact structure. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, BRIDGE, etc.) may be preserved at the start of each paragraph to help with on-screen navigation during production.
+Generate the narrative following this exact structure. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, BRIDGE, etc.) may be preserved at the start of each paragraph as visual navigation cues for on-screen reading during production. These labels are not spoken aloud — they are for Jason's eyes only while recording.
+
+For the closing sign-off paragraph at the end of the Conclusion, use the exact text from the `SHOW_SIGNOFF` context variable set in the foundation.
 
 ```json
 {
@@ -121,7 +123,7 @@ Generate the narrative following this exact structure. Every paragraph slot shou
         "PRACTICAL CALL TO ACTION — [Give them one specific, simple thing to do this week. Make it concrete and doable.]",
         "CLOSING SCRIPTURE — [Introduce and quote the benediction or closing verse in NIV.]",
         "ENCOURAGEMENT — [One final uplifting sentence that sends the listener off feeling encouraged, not overwhelmed.]",
-        "Until next time, keep loving your neighbors, dive into God's word daily, and may the Lord bless you and keep you, and fill you with His peace. Take care and God bless, and I'll see you in the next episode!"
+        "[SHOW_SIGNOFF]"
       ]
     }
   ],

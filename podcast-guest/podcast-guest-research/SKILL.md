@@ -37,7 +37,10 @@ Ask the user the following questions in sequence. Wait for each answer before as
 **Question 6:**
 "Paste the guest's answer to this intake question: 'Tell me about your faith journey.'"
 
-Once you have all six answers, proceed to research before generating the brief. Do not ask any further questions.
+**Question 7:**
+"Is there anything about this guest or this topic you want to avoid — a previous controversy, a theological position that does not fit the show, a subject Jason has already covered recently? If none, say None."
+
+Once you have all seven answers, proceed to research before generating the brief. Do not ask any further questions.
 
 ---
 

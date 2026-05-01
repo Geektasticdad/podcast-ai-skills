@@ -41,7 +41,7 @@ Build the outline around the following five segments. Use the episode length the
 |---|---|
 | 1. Introduction | 1–2 minutes |
 | 2. Series Recap | 2–3 minutes |
-| 3. Topic Introduction | 5–10 minutes |
+| 3. Topic Introduction | 3–5 minutes |
 | 4. Topic Discussion | 20–28 minutes |
 | 5. Conclusion | 1–2 minutes |
 
@@ -94,10 +94,9 @@ Series: [Series Name] | Episode [#] | Target Length: [X] minutes
 - Summary of key points from previous episode(s)
 - How this episode continues or builds on the series
 
-**3. Topic Introduction (5–10 minutes)**
-- Context for the topic
-- Cultural or historical background
-- Why the topic matters today
+**3. Topic Introduction (3–5 minutes)**
+- Context for the topic and why it matters today
+- Note: Cultural and historical background belongs in the Topic Discussion subsections where it supports specific passages.
 
 **4. Topic Discussion (20–28 minutes)**
 
@@ -138,6 +137,26 @@ List them numbered 1–10.
 
 ---
 
+## Outline Quality Check
+
+After producing the outline, run the following four checks and report findings in a section labeled **OUTLINE QUALITY CHECK** at the end of your output. If a check passes, write "Passed." If an issue is found, describe it clearly and suggest a fix.
+
+**1. Time Target**
+Sum all section and subsection time allotments. Does the total fall within 2 minutes of the user's requested episode length? If not, identify which sections need adjustment.
+
+**2. Scripture Repetition**
+If a Series Context Log was provided, confirm that no scripture listed under "Scriptures used" in any log entry appears in this outline. If a repeated passage is present and necessary for this episode's teaching, flag it and state the reason.
+
+**3. Central Point Clarity**
+Can a first-time listener state this episode's single main idea in one sentence after hearing it? If the outline does not make this clear, flag where the focus drifts.
+
+**4. Narrative Flow**
+Does each section and subsection lead naturally to the next? Flag any abrupt transition or logic gap between sections.
+
+---
+
 ## Next Step
 
-Once the outline is approved, return to `podcast-series-check` to verify the episode aligns with the series consistency review before moving to production.
+Once the outline is approved and the quality check passes, proceed to `podcast-series-narrative` to write the full spoken narrative for this episode.
+
+Note: `podcast-series-check` runs once on the completed series plan before you begin building outlines — not on individual episode outlines.

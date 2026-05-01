@@ -151,4 +151,4 @@ List them numbered 1–10.
 
 ## Next Step
 
-Once the outline is approved, proceed to `podcast-episode-narrative` to write the full spoken narrative for each section.
+Once the outline is approved, proceed to `podcast-guest-narrative` to write the full production document for this interview.

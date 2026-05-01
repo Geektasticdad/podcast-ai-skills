@@ -1,11 +1,11 @@
 ---
 name: podcast-publication
-description: Scans a podcast transcript and produces three publication-ready outputs: a normalized Bible reference line, a 75–150 word episode description written in Jason's voice, and a social media pack with SEO summary, keywords, Facebook posts, X posts, and top hashtags. Output is plain text in the chat. Use alongside the Research Foundation skill.
+description: Scans a podcast transcript and produces four publication-ready outputs: a normalized Bible reference line, a 75–150 word episode description written in Jason's voice, a social media pack with SEO summary, keywords, Facebook posts, X posts, and hashtags, and a short episode teaser for newsletters and podcast app previews. Output is plain text in the chat. Use alongside the Research Foundation skill.
 ---
 
 # Publication Pack Generator
 
-This skill scans a transcript and produces three publication-ready outputs: a normalized Bible reference line, a short episode description written in Jason's voice, and a social media pack with SEO copy, Facebook posts, X posts, and hashtags. All outputs are ready to paste directly into show notes, a podcast host platform, or social media.
+This skill scans a transcript and produces four publication-ready outputs: a normalized Bible reference line, a short episode description written in Jason's voice, a social media pack with SEO copy, Facebook posts, X posts, and hashtags, and a short episode teaser for newsletters and podcast app previews. All outputs are ready to paste directly into show notes, a podcast host platform, or social media.
 
 Output is plain text directly in the chat. Do not create or offer to export a Word document or downloadable file.
 
@@ -15,7 +15,7 @@ Output is plain text directly in the chat. Do not create or offer to export a Wo
 
 ## Inputs
 
-Ask the user three questions in sequence. Wait for each answer before asking the next.
+Ask the user four questions in sequence. Wait for each answer before asking the next.
 
 **Question 1:**
 "Paste the transcript or attach the transcript file."
@@ -138,3 +138,14 @@ Write 3 post options. Number them 1, 2, and 3. Each post must be 280 characters 
 
 **Top 5 Hashtags**
 List the 5 hashtags most relevant to the episode. One per line.
+
+---
+
+### Output 4: Episode Teaser
+
+Write 1–2 sentences for use in email newsletters, podcast app preview fields, or anywhere a short hook is needed before the full description. The teaser should:
+- Lead with the listener's problem or question, not the topic label.
+- Create curiosity without giving away the main points.
+- Stay at 40 words or fewer.
+
+Do not use em dashes.

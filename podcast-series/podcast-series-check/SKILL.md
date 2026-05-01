@@ -1,5 +1,5 @@
 ---
-name: series-consistency-check
+name: podcast-series-check
 description: Quality-check skill for a completed series plan. Reviews the episode breakdown against six checks — theme overlap, scripture repetition, arc progression, standalone accessibility, theological consistency, and tone fit. Outputs observations and recommendations only. Use alongside the Research Foundation skill.
 ---
 
@@ -11,23 +11,9 @@ This is a quality-check step, not a rewrite step. Your job is to identify proble
 
 ---
 
-## Inputs
+## Input
 
-Paste the full output from `1-Series-Ideas.md` into the fields below before running the check.
-
-```
-Series Name:
-[INSERT SERIES NAME]
-
-Series Overview:
-[INSERT SERIES OVERVIEW]
-
-Series Arc:
-[INSERT SERIES ARC]
-
-Episode Breakdown (all episodes):
-[PASTE FULL EPISODE BREAKDOWN FROM 1-Series-Ideas.md]
-```
+Paste the full output from your `podcast-series-planner` run. The check will extract the series name, overview, series thread, and full episode breakdown from that output automatically.
 
 ---
 
@@ -103,4 +89,4 @@ SERIES CONSISTENCY REVIEW: [Series Name]
 
 ## Next Step
 
-Address any flagged issues by revising the series plan in `1-Series-Ideas.md`, then proceed to `0a-Series-Launch-Pack.md` to generate series-level marketing content.
+Address any flagged issues by going back to your `podcast-series-planner` conversation and revising the series plan, then proceed to `podcast-series-outline` to build your first episode outline.

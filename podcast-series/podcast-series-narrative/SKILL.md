@@ -82,7 +82,7 @@ Use clear headings for each section. The document should be ready to read aloud 
 
 ## Section 3: Topic Introduction
 
-**Length:** 700–1,200 words (approximately 5–10 minutes spoken)
+**Length:** 350–600 words (approximately 3–5 minutes spoken)
 
 **Structure to Follow:**
 
@@ -91,20 +91,17 @@ Use clear headings for each section. The document should be ready to read aloud 
    - Explain what the topic is and why it is important to understand.
    - Frame the main question or idea the episode will explore.
 
-2. Provide Context for the Topic
+2. Provide Biblical and Theological Context
    - Explain the biblical or theological context of the topic.
    - Describe the situation, teachings, or events surrounding the subject.
    - Help listeners understand what was happening in Scripture when this topic arises.
 
-3. Cultural or Historical Background
-   - Provide historical or cultural insights that help modern listeners understand the passage or topic.
-   - Explain relevant practices, beliefs, or societal norms from the time.
-   - Use insights consistent with respected biblical commentaries.
-
-4. Why This Topic Matters Today
+3. Why This Topic Matters Today
    - Connect the ancient biblical context to modern Christian life.
    - Explain why this topic is still deeply relevant for believers today.
    - Provide practical examples that listeners can relate to.
+
+Note: Cultural and historical background belongs in the Topic Discussion subsections where it is most relevant to specific passages and talking points.
 
 ## Section 4: Topic Discussion
 
@@ -173,7 +170,9 @@ Write one narrative segment per subsection from the outline. Label each subsecti
 
 ## JSON Schema
 
-Generate the narrative following this exact structure. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, RECAP, etc.) may be preserved at the start of each paragraph to help with on-screen navigation during production.
+Generate the narrative following this exact structure. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, RECAP, etc.) may be preserved at the start of each paragraph as visual navigation cues for on-screen reading during production. These labels are not spoken aloud — they are for Jason's eyes only while recording.
+
+For the closing sign-off paragraph at the end of the Conclusion, use the exact text from the `SHOW_SIGNOFF` context variable set in the foundation.
 
 ```json
 {
@@ -199,7 +198,6 @@ Generate the narrative following this exact structure. Every paragraph slot shou
       "paragraphs": [
         "INTRODUCE THE TOPIC -- [Clear explanation of what the topic is and why it is important. Frame the main question or idea the episode will explore.]",
         "BIBLICAL AND THEOLOGICAL CONTEXT -- [The biblical or theological setting of the topic. The situation, teachings, or events surrounding the subject in Scripture.]",
-        "CULTURAL AND HISTORICAL BACKGROUND -- [Historical or cultural insights that help modern listeners understand the passage or topic.]",
         "WHY IT MATTERS TODAY -- [Connection between the ancient biblical context and modern Christian life, with a practical example listeners can relate to.]"
       ]
     },
@@ -236,7 +234,7 @@ Generate the narrative following this exact structure. Every paragraph slot shou
         "PRACTICAL ACTION -- [One specific, simple, doable action for listeners this week.]",
         "CLOSING SCRIPTURE -- [Introduced and quoted closing verse in NIV, connected briefly to the episode's message.]",
         "NEXT EPISODE TEASE -- [One or two sentences hinting at what is coming next. If this is the final episode, reflect on the series as a whole instead.]",
-        "Until next time, keep loving your neighbors, dive into God's word daily, and may the Lord bless you and keep you, and fill you with His peace. Take care and God bless, and I'll see you in the next episode!"
+        "[SHOW_SIGNOFF]"
       ]
     }
   ],

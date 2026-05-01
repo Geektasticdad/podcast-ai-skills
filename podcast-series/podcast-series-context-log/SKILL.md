@@ -5,7 +5,7 @@ description: Generates a compact Series Context Log entry after a completed epis
 
 # Series Context Log Generator
 
-This skill reads a completed episode narrative and generates a single compact log entry. That entry is pasted into the Series Context field of `podcast-series-outline` when building the next episode, so every outline has accurate memory of what came before.
+This skill reads a completed episode outline and generates a single compact log entry. That entry is pasted into the Series Context field of `podcast-series-outline` when building the next episode, so every outline has accurate memory of what came before.
 
 Output is plain text directly in the chat. Do not create or offer to export a Word document or downloadable file.
 
@@ -15,15 +15,15 @@ Output is plain text directly in the chat. Do not create or offer to export a Wo
 
 ## Input
 
-"Paste the full output from `podcast-series-narrative` for the episode you just completed."
+"Paste the full output from `podcast-series-outline` for the episode you just completed. If any scripture references or content changed while writing the narrative, note those changes after pasting the outline."
 
-Once the narrative is pasted, generate the log entry immediately. Do not ask any further questions.
+Once you have the input, generate the log entry immediately. Do not ask any further questions.
 
 ---
 
 ## Directions
 
-Using the narrative provided, generate a compact Series Context Log entry formatted for direct pasting into the next episode's Series Context field in `podcast-series-outline`.
+Using the outline provided (and any noted changes), generate a compact Series Context Log entry formatted for direct pasting into the next episode's Series Context field in `podcast-series-outline`.
 
 The log entry must:
 - Be concise enough that multiple episode entries can be stacked without becoming unwieldy.

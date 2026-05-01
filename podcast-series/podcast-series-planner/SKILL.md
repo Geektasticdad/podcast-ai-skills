@@ -45,7 +45,7 @@ Ask the following questions one at a time. Wait for the user's answer before mov
 
 ## Phase 2: Produce the Series Plan
 
-Once you have answers to all five questions, produce the series plan. Format it as a clean, Word-ready document using the structure below.
+Once you have answers to all five questions, produce the series plan. Format it as clean, structured text using the structure below.
 
 Do not ask more questions. Do not explain your reasoning. Just produce the plan.
 

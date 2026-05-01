@@ -18,7 +18,7 @@ Output is plain text directly in the chat. Do not create or offer to export a Wo
 Ask the user three questions in sequence. Wait for each answer before asking the next.
 
 **Question 1:**
-"Attach or paste the full guest narrative document from `podcast-guest-narrative`."
+"Attach the guest narrative Word document from `podcast-guest-narrative`, or paste its full text content into the chat."
 
 **Question 2:**
 "What is the recording date? If not yet confirmed, type TBD."
