@@ -10,7 +10,9 @@
       "Bash(Remove-Item \"D:\\\\github\\\\podcast-ai-skills\\\\podcast-episode\\\\podcast-episode-narrative\\\\inspect-template.py\")",
       "Bash(Remove-Item \"D:\\\\github\\\\podcast-ai-skills\\\\podcast-episode\\\\podcast-episode-narrative\\\\update-template.py\")",
       "Bash(Write-Host \"Cleaned up\")",
-      "PowerShell(Remove-Item *)"
+      "PowerShell(Remove-Item *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(Get-ChildItem *)"
     ]
   }
 }
