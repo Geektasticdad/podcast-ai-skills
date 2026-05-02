@@ -63,9 +63,9 @@ Open a new Claude conversation. Paste the full contents of `foundation/SKILL.md`
 
 | Skill | Folder | What It Does |
 |---|---|---|
-| Guest Research | `podcast-guest/podcast-guest-research/` | Asks 6 questions, researches the guest online, then produces a research brief with theological alignment check and Go/No-Go recommendation. Requires web browsing. |
-| Guest Interview Outline | `podcast-guest/podcast-guest-outline/` | Builds a structured interview outline with introduction, icebreakers, faith questions, product/service/event questions, and a conclusion. |
-| Guest Interview Narrative | `podcast-guest/podcast-guest-narrative/` | Writes the full production document: host scripts, on-air questions with follow-up prompts, listener call-to-action, and closing. Formatted for Microsoft Word. |
+| Guest Research | `podcast-guest/podcast-guest-research/` | Asks 7 questions, researches the guest online, then produces a research brief with theological alignment check and Go/No-Go recommendation. Requires web browsing. |
+| Guest Interview Outline | `podcast-guest/podcast-guest-outline/` | Builds a structured interview outline with introduction, icebreakers, faith questions, product/service/event questions, and a conclusion. Optionally analyzes an intro call transcript to surface key moments and sharpen question selection. |
+| Guest Interview Narrative | `podcast-guest/podcast-guest-narrative/` | Writes the full production document: host scripts, on-air questions with follow-up prompts, listener call-to-action, and closing. Asks for the episode number and title. Formatted for Microsoft Word. |
 | Guest Rundown Email | `podcast-guest/podcast-guest-rundown/` | Generates a plain-text prep email from Jason to the guest summarizing the question areas and episode format. Ready to copy and paste. |
 
 ---
@@ -134,17 +134,17 @@ Use this end-to-end workflow when booking and preparing a guest for the show.
 
 ### Step 1: Research the Guest
 
-Run `podcast-guest-research`. It will ask six questions: the guest's name and website, social media URLs, episode topic and any product or service to mention, their favorite Bible verse, and their answers to two intake questions about why they'd be a great guest and their faith journey. The skill researches the guest online and produces a brief covering their background, faith summary, theological alignment across five checkpoints, and a Go/No-Go booking recommendation.
+Run `podcast-guest-research`. It will ask seven questions: the guest's name and website, social media URLs, episode topic and any product or service to mention, their favorite Bible verse, their answers to two intake questions about why they'd be a great guest and their faith journey, and anything about the guest or topic to avoid. The skill researches the guest online and produces a brief covering their background, faith summary, theological alignment across five checkpoints, and a Go/No-Go booking recommendation.
 
 **Note:** This skill requires a Claude conversation with web browsing enabled. It will not produce a complete brief without internet access.
 
 ### Step 2: Build the Interview Outline
 
-Run `podcast-guest-outline`. Paste the guest research brief and provide the target episode length in minutes. It produces a structured interview outline with an introduction script, icebreaker questions, faith questions, product/service/event questions, and a conclusion script.
+Run `podcast-guest-outline`. Paste the guest research brief and provide the target episode length in minutes. If you have a transcription from your intro call with the guest, paste or attach it — the skill will analyze it to surface stories, threads, and moments worth bringing on-air and use them to sharpen the questions. It produces a structured interview outline with an introduction script, icebreaker questions, faith questions, product/service/event questions, and a conclusion script, plus 10 potential episode titles.
 
 ### Step 3: Write the Interview Narrative
 
-Run `podcast-guest-narrative`. Paste the approved interview outline. It produces the full production document formatted for Microsoft Word — host scripts, all on-air questions with follow-up prompts, a listener call-to-action, and a closing script.
+Run `podcast-guest-narrative`. Paste the approved interview outline, then provide the episode number and choose an episode title from the outline's title list (or write your own). It produces the full production document formatted for Microsoft Word — host scripts, all on-air questions with follow-up prompts, a listener call-to-action, and a closing script.
 
 ### Step 4: Send the Guest Rundown Email
 
