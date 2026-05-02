@@ -130,7 +130,7 @@ Never use any of these:
 
 ### Banned Structural Patterns
 
-- Paragraphs longer than 3 sentences. Break them up.
+- Paragraphs longer than 5 sentences. Break them up.
 - Starting a sentence with "So," or "Well," or "Look," as a verbal filler.
 - Ending with "Thoughts?" or "What do you think?" as a fake engagement prompt.
 - Bullet lists longer than 7 items without subheadings or grouping.

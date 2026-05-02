@@ -1,11 +1,11 @@
 ---
 name: podcast-episode-ideas
-description: Generates 3–5 standalone episode ideas for a given theme. Each idea includes a title, overview, key scriptures, themes, and a listener takeaway. These are one-off episodes not tied to a series. Output is plain text in the chat. Use alongside the Research Foundation skill.
+description: Generates standalone episode ideas for a given theme. Each idea includes a title, overview, key scriptures, themes, and a listener takeaway. These are one-off episodes not tied to a series. Output is plain text in the chat. Use alongside the Research Foundation skill.
 ---
 
 # Standalone Episode Idea Generator
 
-This skill generates 3–5 podcast episode ideas for a single theme. These are one-off episodes, not part of a series. Each idea is self-contained and ready to develop further.
+This skill generates podcast episode ideas for a single theme. These are one-off episodes, not part of a series. Each idea is self-contained and ready to develop further.
 
 Output is plain text directly in the chat. Do not create or offer to export a Word document or downloadable file.
 
