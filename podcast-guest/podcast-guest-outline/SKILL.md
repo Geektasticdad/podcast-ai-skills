@@ -25,7 +25,23 @@ Before building the outline, ask the user two questions in sequence. Wait for ea
 **Question 2:**
 "How long should this episode be in minutes?"
 
-Once you have both answers, proceed to build the outline. Do not ask any further questions.
+**Question 3:**
+"Do you have a transcription from your intro call with this guest? If yes, paste it or attach the file. If no, type None."
+
+Once you have all three answers, proceed to build the outline. Do not ask any further questions.
+
+---
+
+## Transcript Analysis
+
+If a transcription was provided, read it before building the outline and extract the following:
+
+- **Stories and moments worth putting on-air.** Flag any anecdote, personal turning point, or vivid detail the guest shared that would resonate with listeners. Note it for use in a faith question or icebreaker.
+- **Topics the guest is clearly energized by.** When a guest lights up about something in a pre-call, they will be a better guest on that topic. Prioritize those threads.
+- **Anything to avoid or handle carefully.** Sensitive disclosures, topics the guest seemed reluctant about, or anything Jason indicated he wants to steer clear of.
+- **Natural question threads.** Moments where Jason asked a follow-up and the guest went deeper — these reveal where the best on-air questions will land.
+
+Use these notes to shape question selection, wording, and order throughout the outline. Do not quote the transcript directly in the outline — draw from it, don't reproduce it. If no transcript was provided, skip this step.
 
 ---
 
