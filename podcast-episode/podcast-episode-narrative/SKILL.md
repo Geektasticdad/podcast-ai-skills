@@ -46,8 +46,8 @@ The docx saves to the current working directory as `Episode_[Episode Number].doc
 
 ## JSON Schema
 
-Generate the narrative following the structure defined in `references/episode-template.json` in this skill's directory. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, BRIDGE, etc.) may be preserved at the start of each paragraph as visual navigation cues for on-screen reading during production. These labels are not spoken aloud — they are for Jason's eyes only while recording.
+Generate the narrative following the structure defined in `references/episode-template.json` in this skill's directory. Every paragraph slot must contain fully written narrative prose. Do not include any label prefixes or placeholder text in the final output.
 
-For the closing sign-off paragraph at the end of the Conclusion, use the exact text from the `SHOW_SIGNOFF` context variable set in the foundation.
+For the opening sign-on, use the exact text from the `SHOW_SIGNON` context variable set in the foundation. For the closing sign-off, use the exact text from the `SHOW_SIGNOFF` context variable.
 
 Scale the number of Topic Discussion subsections to match what the outline provides. Add or remove subsections as needed. Do not leave placeholder headings or paragraph text in the final JSON — every field must contain fully written content.

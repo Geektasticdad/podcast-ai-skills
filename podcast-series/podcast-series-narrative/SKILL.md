@@ -173,59 +173,61 @@ Write one narrative segment per subsection from the outline. Label each subsecti
 
 ## JSON Schema
 
-Generate the narrative following this exact structure. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, RECAP, etc.) may be preserved at the start of each paragraph as visual navigation cues for on-screen reading during production. These labels are not spoken aloud — they are for Jason's eyes only while recording.
+Generate the narrative following this exact structure. Every paragraph slot must contain fully written narrative prose. Do not include any label prefixes or placeholder text in the final output.
 
-For the closing sign-off paragraph at the end of the Conclusion, use the exact text from the `SHOW_SIGNOFF` context variable set in the foundation.
+For the opening sign-on, use the exact text from the `SHOW_SIGNON` context variable set in the foundation. For the closing sign-off, use the exact text from the `SHOW_SIGNOFF` context variable.
 
 ```json
 {
-  "title": "Episode [N]: [Episode Title]",
+  "title": "[Episode Title]",
+  "episode": "Episode [N]",
   "sections": [
     {
       "heading": "Introduction",
       "paragraphs": [
         "[SHOW_SIGNON]",
-        "HOOK -- [A vivid question, statement, or scenario that grabs the listener's attention and connects them emotionally to the topic.]",
-        "SERIES ACKNOWLEDGMENT -- [Brief reference to the series by name and where this episode falls within it.]",
-        "PREVIEW -- [Summary of the key ideas this episode will explore and why they matter to everyday Christians.]"
+        "[A vivid question, statement, or scenario that grabs the listener's attention and connects them emotionally to the topic.]",
+        "[Brief reference to the series by name and where this episode falls within it.]",
+        "[Summary of the key ideas this episode will explore and why they matter to everyday Christians.]"
       ]
     },
     {
       "heading": "Series Recap",
       "paragraphs": [
-        "RECAP -- [1-2 sentence summary of the key insight or lesson from the previous episode. If Episode 1, introduce the series instead: what it covers, why it matters, and what listeners can expect.]",
-        "BRIDGE -- [How today's topic flows naturally from what came before, building anticipation for what this episode adds to the series.]"
+        "[1-2 sentence summary of the key insight or lesson from the previous episode. If Episode 1, introduce the series instead: what it covers, why it matters, and what listeners can expect.]",
+        "[How today's topic flows naturally from what came before, building anticipation for what this episode adds to the series.]"
       ]
     },
     {
       "heading": "Topic Introduction",
       "paragraphs": [
-        "INTRODUCE THE TOPIC -- [Clear explanation of what the topic is and why it is important. Frame the main question or idea the episode will explore.]",
-        "BIBLICAL AND THEOLOGICAL CONTEXT -- [The biblical or theological setting of the topic. The situation, teachings, or events surrounding the subject in Scripture.]",
-        "WHY IT MATTERS TODAY -- [Connection between the ancient biblical context and modern Christian life, with a practical example listeners can relate to.]"
+        "[Clear explanation of what the topic is and why it is important. Frame the main question or idea the episode will explore.]",
+        "[The biblical or theological setting of the topic. The situation, teachings, or events surrounding the subject in Scripture.]",
+        "[Historical or cultural insights that help modern listeners understand the passage or topic.]",
+        "[Connection between the ancient biblical context and modern Christian life, with a practical example listeners can relate to.]"
       ]
     },
     {
       "heading": "Topic Discussion",
       "subsections": [
         {
-          "heading": "[Subsection 1 Title]",
+          "topic_subheading": "[Subsection 1 Title]",
           "paragraphs": [
-            "INTRODUCE THE SUBTOPIC -- [The key idea for this section and how it connects to the overall episode theme.]",
-            "TALKING POINTS -- [Expanded explanation of the key talking points from the outline, in clear logical order.]",
-            "SCRIPTURE -- [Bible passage introduced naturally, quoted in NIV, with explanation of what it teaches and how it relates to the topic.]",
-            "COMMENTARY INSIGHT -- [Insight from a trusted biblical commentary providing historical context, theological depth, or clarification.]",
-            "APPLICATION -- [How this biblical truth applies to everyday Christian life, with a practical example or question for reflection.]"
+            "[The key idea for this section and how it connects to the overall episode theme.]",
+            "[Expanded explanation of the key talking points from the outline, in clear logical order.]",
+            "[Bible passage introduced naturally, quoted in NIV, with explanation of what it teaches and how it relates to the topic.]",
+            "[Insight from a trusted biblical commentary providing historical context, theological depth, or clarification.]",
+            "[How this biblical truth applies to everyday Christian life, with a practical example or question for reflection.]"
           ]
         },
         {
-          "heading": "[Subsection 2 Title]",
+          "topic_subheading": "[Subsection 2 Title]",
           "paragraphs": [
-            "INTRODUCE THE SUBTOPIC -- [The key idea for this section and how it connects to the overall episode theme.]",
-            "TALKING POINTS -- [Expanded explanation of the key talking points from the outline, in clear logical order.]",
-            "SCRIPTURE -- [Bible passage introduced naturally, quoted in NIV, with explanation of what it teaches and how it relates to the topic.]",
-            "COMMENTARY INSIGHT -- [Insight from a trusted biblical commentary providing historical context, theological depth, or clarification.]",
-            "APPLICATION -- [How this biblical truth applies to everyday Christian life, with a practical example or question for reflection.]"
+            "[The key idea for this section and how it connects to the overall episode theme.]",
+            "[Expanded explanation of the key talking points from the outline, in clear logical order.]",
+            "[Bible passage introduced naturally, quoted in NIV, with explanation of what it teaches and how it relates to the topic.]",
+            "[Insight from a trusted biblical commentary providing historical context, theological depth, or clarification.]",
+            "[How this biblical truth applies to everyday Christian life, with a practical example or question for reflection.]"
           ]
         }
       ]
@@ -233,18 +235,19 @@ For the closing sign-off paragraph at the end of the Conclusion, use the exact t
     {
       "heading": "Conclusion",
       "paragraphs": [
-        "SUMMARY -- [Brief recap of the most important ideas discussed in the episode.]",
-        "CORE TAKEAWAY -- [The central message of the episode restated clearly in 1-2 sentences.]",
-        "PRACTICAL ACTION -- [One specific, simple, doable action for listeners this week.]",
-        "CLOSING SCRIPTURE -- [Introduced and quoted closing verse in NIV, connected briefly to the episode's message.]",
-        "NEXT EPISODE TEASE -- [One or two sentences hinting at what is coming next. If this is the final episode, reflect on the series as a whole instead.]",
+        "[Brief recap of the most important ideas discussed in the episode.]",
+        "[The central message of the episode restated clearly in 1-2 sentences. The one thing listeners should walk away knowing.]",
+        "[One specific, simple thing listeners can do this week. Make it concrete and doable.]",
+        "[Introduced and quoted closing verse in NIV, connected briefly to the episode's message.]",
+        "[One or two sentences hinting at what is coming next. Curiosity-building, not spoilers. If this is the final episode, reflect on the series as a whole instead.]",
         "[SHOW_SIGNOFF]"
       ]
     }
   ],
   "references": [
-    "[Author Name, Book Title (Publisher, Year)]",
-    "[Author Name, Book Title (Publisher, Year)]"
+    "[Last, First. (Year). Title. Publisher.]",
+    "[Last, First. (Year). Article title. Journal Name, volume(issue), pages.]",
+    "[Author or Organization. (Year, Month Day). Page title. Website Name. URL]"
   ],
   "output": "Episode_[N].docx"
 }

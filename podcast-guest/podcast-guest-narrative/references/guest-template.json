@@ -1,5 +1,6 @@
 {
-  "title": "Episode TBD: Guest Name",
+  "title": "[Guest Name]",
+  "episode": "Episode [N]",
   "sections": [
     {
       "type": "prose",

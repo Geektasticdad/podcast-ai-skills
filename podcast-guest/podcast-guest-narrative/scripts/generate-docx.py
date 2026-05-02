@@ -14,8 +14,9 @@ Sections with type "prose" render as headed paragraphs.
 Sections with type "questions" render as numbered questions with italic follow-up prompts.
 
 Styles inherited from Episode TBD.docx:
-  Title          - document title     (Arial 26pt, black)
-  Heading 1      - section headings   (Arial 20pt, black)
+  Title          - guest name / document title
+  Subtitle       - episode number/designation
+  Heading 1      - section headings
   Normal         - body paragraphs and questions (Arial 11pt, ~14pt after, 1.38x leading)
   List Paragraph - reference items
 """
@@ -87,6 +88,7 @@ def build_document(guest: dict):
     clear_body(doc)
 
     para(doc, guest["title"], "Title")
+    para(doc, guest["episode"], "Subtitle")
 
     for section in guest["sections"]:
         para(doc, section["heading"], "Heading 1")

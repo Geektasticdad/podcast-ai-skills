@@ -11,9 +11,10 @@ Usage:
 See references/series-template.json for the expected JSON structure.
 
 Styles inherited from Episode TBD.docx:
-  Title          - episode title      (Arial 26pt, black)
-  Heading 1      - section headings   (Arial 20pt, black)
-  Heading 2      - subsection heads   (Arial 16pt, black, spaced)
+  Title          - episode title
+  Subtitle       - episode number/designation
+  Heading 1      - section headings
+  Heading 2      - topic subheadings
   Normal         - body paragraphs    (Arial 11pt, ~14pt after, 1.38x leading)
   List Paragraph - reference items
 """
@@ -72,6 +73,7 @@ def build_document(ep: dict):
     clear_body(doc)
 
     para(doc, ep["title"], "Title")
+    para(doc, ep["episode"], "Subtitle")
 
     for section in ep["sections"]:
         para(doc, section["heading"], "Heading 1")
@@ -82,7 +84,7 @@ def build_document(ep: dict):
 
         if "subsections" in section:
             for sub in section["subsections"]:
-                para(doc, sub["heading"], "Heading 2")
+                para(doc, sub["topic_subheading"], "Heading 2")
                 for text in sub["paragraphs"]:
                     para(doc, text, "Normal")
 

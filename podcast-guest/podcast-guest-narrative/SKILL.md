@@ -125,7 +125,8 @@ Omit the Product/Service/Event Questions and Listener Call-to-Action sections en
 
 ```json
 {
-  "title": "Episode [N]: [Guest Name]",
+  "title": "[Guest Name]",
+  "episode": "Episode [N]",
   "sections": [
     {
       "type": "prose",
