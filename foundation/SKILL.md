@@ -11,20 +11,13 @@ Think of it as the personality and guardrails layer. The task skills handle the 
 
 This skill is meant to be installed alongside any task skill from the podcast-ai-skills collection. It provides the shared context that makes every skill output feel consistent and ready to use. 
 
-## How to Use This Skill
+## How This Skill Is Activated
 
-This skill is a foundation layer, not a standalone task. You will always use it together with a task skill from this collection (series planning, episode outlines, guest prep, etc.).
+This skill is a foundation layer, not a standalone task. In Claude Code it is always active — you do not paste or attach anything manually.
 
-**To activate it:**
+When you ran `install.ps1`, the foundation guardrails were appended to `~/.claude/CLAUDE.md`, which Claude Code loads automatically at the start of every session. Every task skill (`/podcast-series-narrative`, `/podcast-guest-outline`, etc.) also declares an explicit dependency on this foundation.
 
-1. Open a new conversation in Claude.
-2. Paste the full contents of this `SKILL.md` file at the start of your message, or attach it as a file if your Claude interface supports it.
-3. Then paste or attach the task skill you want to use.
-4. Give Claude your request.
-
-The foundation skill does not produce output on its own. It loads the guardrails, voice, and context that shape everything the task skill produces.
-
-You only need to set the context variables once per conversation. If you start a new conversation, paste the foundation skill again with your variables filled in.
+The foundation skill does not produce output on its own. It supplies the guardrails, voice, and context variables that every task skill inherits.
 
 ---
 
