@@ -67,7 +67,7 @@ When editing any skill, check that output instructions do not conflict with foun
 - Skills that produce read-aloud content (narratives) export to Microsoft Word
 - Skills that produce reference content (outlines, research briefs, checks) output plain text in the chat
 - The three narrative skills (`podcast-episode-narrative`, `podcast-guest-narrative`, `podcast-series-narrative`) each generate a file via `scripts/generate-docx.py` using a template in `assets/` and a JSON schema in `references/`
-- The `podcast-guest-narrative` skill uses emoji section headers; all other skills use plain markdown headings
+- `podcast-guest-research` and `podcast-guest-narrative` use emoji section headers; all other skills use plain markdown headings
 
 ## Workflow Connections
 

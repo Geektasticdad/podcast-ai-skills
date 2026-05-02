@@ -33,7 +33,7 @@ Once you have all three answers, generate the email immediately. Do not ask any 
 ## Directions
 
 1. Read through the full guest narrative document to identify:
-   - The selected or likely episode title direction
+   - The episode title from the `episode_title` field, or the topic direction if not present
    - The on-air icebreaker questions
    - The faith questions
    - The product, service, or event questions (if present)
@@ -68,7 +68,7 @@ Write the full email as plain text using the structure below.
 
 ---
 
-Subject: Getting You Ready for My Ministry Mission — [Episode Title or Topic Direction]
+Subject: Getting You Ready for My Ministry Mission: [Episode Title or Topic Direction]
 
 Hi [Guest Name],
 

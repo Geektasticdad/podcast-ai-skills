@@ -19,7 +19,8 @@
       "Bash(Format-List)",
       "PowerShell(Get-ChildItem -Path \"D:\\\\github\\\\podcast-ai-skills\" -Recurse -File | Sort-Object FullName | ForEach-Object { $_.FullName } | Out-String -Stream)",
       "PowerShell(Get-ChildItem -Path \"D:\\\\github\\\\podcast-ai-skills\" -Recurse -File | Group-Object { [System.IO.Path]::GetExtension\\($_.Name\\) } | Select-Object @{Name='FileType';Expression={if\\($_.Name -eq ''\\) {'\\(no extension\\)'} else {$_.Name}}}, @{Name='Count';Expression={$_.Count}}, @{Name='TotalSize';Expression={\\($_.Group | Measure-Object -Property Length -Sum\\).Sum}} | Sort-Object FileType)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(Get-ChildItem *)"
     ]
   }
 }

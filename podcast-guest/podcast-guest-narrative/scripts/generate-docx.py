@@ -89,6 +89,8 @@ def build_document(guest: dict):
 
     para(doc, guest["title"], "Title")
     para(doc, guest["episode"], "Subtitle")
+    if guest.get("episode_title"):
+        para(doc, guest["episode_title"], "Subtitle")
 
     for section in guest["sections"]:
         para(doc, section["heading"], "Heading 1")

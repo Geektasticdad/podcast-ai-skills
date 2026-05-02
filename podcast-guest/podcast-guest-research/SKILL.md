@@ -1,6 +1,6 @@
 ---
 name: podcast-guest-research
-description: Guest research skill. Asks 6 questions to collect guest details, crawls their website and social media, searches the internet for additional context, then produces a structured research brief covering background, faith summary, theological alignment, a Go/No-Go recommendation, potential episode topics, icebreakers, and vetting questions. Output is plain text in the chat. Use alongside the Research Foundation skill.
+description: Guest research skill. Asks 7 questions to collect guest details, crawls their website and social media, searches the internet for additional context, then produces a structured research brief covering background, faith summary, theological alignment, a Go/No-Go recommendation, potential episode topics, icebreakers, and vetting questions. Output is plain text in the chat. Use alongside the Research Foundation skill.
 ---
 
 # Guest Research Brief Generator
