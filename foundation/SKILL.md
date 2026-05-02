@@ -1,4 +1,5 @@
 ---
+name: foundation
 description: Shared context layer for all podcast AI skills. Sets theological guardrails, podcast voice, context, and output standards. Install this along any task skill.
 ---
 
