@@ -16,7 +16,7 @@ This skill asks two questions before producing the document.
 pip install python-docx
 ```
 
-**Requires Episode TBD.docx** in the same directory as generate-docx.py. This file provides the branded style template for the exported document.
+**Requires Episode TBD.docx** in the `assets/` subdirectory of this skill. This file provides the branded style template for the exported document.
 
 ## Inputs
 
@@ -35,8 +35,8 @@ Once you have both answers, produce the complete document. Do not ask any furthe
 After writing the document, do the following:
 
 1. Write the document content to a JSON file named `podcast-guest-temp.json` in the current working directory, following the JSON schema below.
-2. Locate `generate-docx.py` in the same directory as this skill file. Search parent skill directories if needed.
-3. Run the script: `python generate-docx.py podcast-guest-temp.json`
+2. Locate `scripts/generate-docx.py` in this skill's directory.
+3. Run the script: `python scripts/generate-docx.py podcast-guest-temp.json`
 4. Delete `podcast-guest-temp.json` after the docx generates successfully.
 5. Report the docx filename and the directory it was saved to.
 

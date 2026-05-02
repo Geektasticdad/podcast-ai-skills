@@ -8,7 +8,7 @@ Usage:
   python generate-docx.py                          # reads series.json
   python generate-docx.py my-episode.json          # reads a specific file
 
-See series-template.json for the expected JSON structure.
+See references/series-template.json for the expected JSON structure.
 
 Styles inherited from Episode TBD.docx:
   Title          - episode title      (Arial 26pt, black)
@@ -24,7 +24,7 @@ from pathlib import Path
 
 from docx import Document
 
-TEMPLATE = Path(__file__).parent / "Episode TBD.docx"
+TEMPLATE = Path(__file__).parent.parent / "assets" / "Episode TBD.docx"
 
 
 # ── JSON LOADER ───────────────────────────────────────────────────────────────
@@ -93,7 +93,7 @@ def build_document(ep: dict):
     p = para(doc, "", "Normal")
     p.add_run("Ready for recording. Episode is approved and production-ready.").font.italic = True
 
-    out = Path(__file__).parent / ep["output"]
+    out = Path.cwd() / ep["output"]
     doc.save(out)
     print(f"Saved: {out}")
 

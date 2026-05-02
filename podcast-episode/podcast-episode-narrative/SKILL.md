@@ -1,6 +1,6 @@
 ---
 name: podcast-episode-narrative
-description: Standalone episode narrative skill. Takes a completed episode outline from podcast-episode-outline and writes a full structured narrative, exports it as a JSON file, then generates a formatted Word docx via generate-docx.py. No series recap. Use alongside the Research Foundation skill.
+description: Standalone episode narrative skill. Takes a completed episode outline from podcast-episode-outline and writes a full structured narrative, exports it as a JSON file, then generates a formatted Word docx via scripts/generate-docx.py. No series recap. Use alongside the Research Foundation skill.
 ---
 
 # Standalone Episode Narrative Builder
@@ -18,7 +18,7 @@ This skill asks two questions before producing the narrative.
 pip install python-docx
 ```
 
-**Requires Episode TBD.docx** in the same directory as generate-docx.py. This file provides the branded style template for the exported document.
+**Requires Episode TBD.docx** in the `assets/` subdirectory of this skill. This file provides the branded style template for the exported document.
 
 ## Inputs
 
@@ -37,8 +37,8 @@ Once you have both answers, produce the full narrative. Do not ask any further q
 After writing the narrative, do the following:
 
 1. Write the narrative content to a JSON file named `podcast-episode-temp.json` in the current working directory, following the JSON schema below.
-2. Locate `generate-docx.py` in the same directory as this skill file. Search parent skill directories if needed.
-3. Run the script: `python generate-docx.py podcast-episode-temp.json`
+2. Locate `scripts/generate-docx.py` in this skill's directory.
+3. Run the script: `python scripts/generate-docx.py podcast-episode-temp.json`
 4. Delete `podcast-episode-temp.json` after the docx generates successfully.
 5. Report the docx filename and the directory it was saved to.
 
@@ -46,93 +46,8 @@ The docx saves to the current working directory as `Episode_[Episode Number].doc
 
 ## JSON Schema
 
-Generate the narrative following this exact structure. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, BRIDGE, etc.) may be preserved at the start of each paragraph as visual navigation cues for on-screen reading during production. These labels are not spoken aloud — they are for Jason's eyes only while recording.
+Generate the narrative following the structure defined in `references/episode-template.json` in this skill's directory. Every paragraph slot should contain fully written narrative prose — not placeholder labels. The label prefixes (HOOK, BRIDGE, etc.) may be preserved at the start of each paragraph as visual navigation cues for on-screen reading during production. These labels are not spoken aloud — they are for Jason's eyes only while recording.
 
 For the closing sign-off paragraph at the end of the Conclusion, use the exact text from the `SHOW_SIGNOFF` context variable set in the foundation.
-
-```json
-{
-  "title": "Episode [N]: [Episode Title]",
-  "sections": [
-    {
-      "heading": "Introduction",
-      "paragraphs": [
-        "HOOK — [A vivid scenario, provocative question, or relatable moment that immediately connects the listener to the topic emotionally.]",
-        "BRIDGE — [One or two sentences that name what the episode is and is not. Set the listener's expectation clearly.]",
-        "PREVIEW — [Tell the listener what they will learn: the 2–3 big ideas and why each matters for their faith or daily life.]",
-        "SCRIPTURE INTRO — [Briefly name the key scriptures that will anchor the episode. One sentence per passage.]"
-      ]
-    },
-    {
-      "heading": "Topic Introduction",
-      "paragraphs": [
-        "REFRAME — [Step back and reframe how the listener should think about this topic. Correct a common misconception or set up a fresh lens.]",
-        "BIBLICAL PRECEDENT — [Show that this topic or tension appears throughout Scripture. Use 2–3 brief examples from the Old and New Testaments.]",
-        "CULTURAL CONTEXT — [Describe what makes this topic uniquely challenging in the modern world. What pressures or trends make it harder today?]",
-        "STATISTICS OR RESEARCH — [If available, include a relevant study, survey, or data point that grounds the cultural challenge in reality. If none, omit this paragraph.]",
-        "WHY IT MATTERS — [Connect everything back to the listener. End with the central question the rest of the episode will answer.]"
-      ]
-    },
-    {
-      "heading": "Topic Discussion",
-      "subsections": [
-        {
-          "heading": "[Subsection 1 Title]",
-          "paragraphs": [
-            "INTRODUCE THE IDEA — [State the key concept clearly. Name it, define it, and explain why it matters before going deeper.]",
-            "DISTINCTION — [If helpful, draw a contrast or distinction that prevents the listener from misunderstanding the concept.]",
-            "COMMENTARY INSIGHT — [Integrate a quote or insight from a trusted theologian or Christian author. Format: [Author], in [Book Title], [insight or quote].]",
-            "SCRIPTURE INTRO — [Introduce the main passage naturally, with a sentence of context before quoting it.]",
-            "SCRIPTURE QUOTE — [Quote the verse(s) in NIV. Format: [Book Chapter:Verse] — '[full quote]' (NIV).]",
-            "CULTURAL/HISTORICAL CONTEXT — [Explain what the original audience would have understood that modern readers might miss.]",
-            "APPLICATION — [What does this biblical truth mean for the listener right now? Offer a specific, practical example or action.]"
-          ]
-        },
-        {
-          "heading": "[Subsection 2 Title]",
-          "paragraphs": [
-            "INTRODUCE THE IDEA — [State the key concept and connect it to the previous subsection.]",
-            "CONTRAST OR CHALLENGE — [Name a common wrong response or pitfall before showing the biblical alternative.]",
-            "BIBLICAL MODEL — [Point to a specific person or moment in Scripture that demonstrates the right response.]",
-            "SCRIPTURE QUOTE — [Quote the key verse(s) in NIV with a sentence of setup.]",
-            "COMMENTARY INSIGHT — [Add a scholar or author's perspective that deepens or challenges the listener's thinking.]",
-            "CULTURAL CONTEXT — [Explain anything about the original audience or historical setting that makes the passage land harder.]",
-            "PRACTICAL SCRIPT — [Where relevant, give the listener specific words or actions. What do they actually say or do this week?]"
-          ]
-        },
-        {
-          "heading": "[Subsection 3 Title]",
-          "paragraphs": [
-            "INTRODUCE THE IDEA — [State the final key concept. This one often lands hardest or requires the most surrender.]",
-            "THE TENSION — [Name the difficulty honestly. Why is this hard? What does the listener have to let go of?]",
-            "SCRIPTURE QUOTE 1 — [First supporting verse in NIV, with context.]",
-            "SCRIPTURE QUOTE 2 — [Second supporting verse in NIV, with context.]",
-            "BIBLICAL NARRATIVE — [If applicable, reference a longer biblical story or parable that illustrates the concept in full.]",
-            "COMMENTARY INSIGHT — [Add a scholar's voice to deepen the theological point.]",
-            "PRACTICAL ACTION — [Close with a specific, doable action. What does surrendering to this truth look like in practice this week?]"
-          ]
-        }
-      ]
-    },
-    {
-      "heading": "Conclusion",
-      "paragraphs": [
-        "TRANSITION — ['Let me bring this home.' Or a similar phrase that signals the close.]",
-        "SUMMARY — [Briefly recap the 2–3 most important ideas from the episode. Each idea in one sentence.]",
-        "CORE TAKEAWAY — [Restate the central message of the episode in 1–2 clear sentences. The one thing they should walk away knowing.]",
-        "PRACTICAL CALL TO ACTION — [Give them one specific, simple thing to do this week. Make it concrete and doable.]",
-        "CLOSING SCRIPTURE — [Introduce and quote the benediction or closing verse in NIV.]",
-        "ENCOURAGEMENT — [One final uplifting sentence that sends the listener off feeling encouraged, not overwhelmed.]",
-        "[SHOW_SIGNOFF]"
-      ]
-    }
-  ],
-  "references": [
-    "[Author Name, Book Title (Publisher, Year)]",
-    "[Author Name, Book Title (Publisher, Year)]"
-  ],
-  "output": "Episode_[N].docx"
-}
-```
 
 Scale the number of Topic Discussion subsections to match what the outline provides. Add or remove subsections as needed. Do not leave placeholder headings or paragraph text in the final JSON — every field must contain fully written content.

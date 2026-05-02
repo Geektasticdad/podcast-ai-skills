@@ -6,16 +6,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A collection of Claude skill files for the My Ministry Mission podcast hosted by Jason McConnell. Skills are markdown files that define prompts, guardrails, input questions, and output instructions for Claude to follow when producing podcast content.
 
-The only executable code is `podcast-episode/podcast-episode-narrative/generate-docx.py`, which converts a structured JSON file into a formatted Word document using the `python-docx` library.
+Each narrative skill that generates a Word document contains a `scripts/generate-docx.py` that converts a structured JSON file into a formatted Word document using the `python-docx` library. The three scripts are:
+
+- `podcast-episode/podcast-episode-narrative/scripts/generate-docx.py`
+- `podcast-guest/podcast-guest-narrative/scripts/generate-docx.py`
+- `podcast-series/podcast-series-narrative/scripts/generate-docx.py`
 
 ## Running the DOCX Generator
 
 ```
 pip install python-docx
-python generate-docx.py <episode-json-file>
+python <skill>/scripts/generate-docx.py <json-file>
 ```
 
-The script requires `Episode TBD.docx` to be present in the same directory as the script. This file is the branded Word style template. The script reads styles from the template rather than defining its own.
+Each script requires `Episode TBD.docx` to be present in the skill's `assets/` subdirectory. This file is the branded Word style template. The script reads styles from the template rather than defining its own. The output docx is saved to the current working directory.
 
 ## Skill File Structure
 
@@ -62,7 +66,7 @@ When editing any skill, check that output instructions do not conflict with foun
 
 - Skills that produce read-aloud content (narratives) export to Microsoft Word
 - Skills that produce reference content (outlines, research briefs, checks) output plain text in the chat
-- The `podcast-episode-narrative` skill is the only one that generates a file via an external script rather than direct Word output
+- The three narrative skills (`podcast-episode-narrative`, `podcast-guest-narrative`, `podcast-series-narrative`) each generate a file via `scripts/generate-docx.py` using a template in `assets/` and a JSON schema in `references/`
 - The `podcast-guest-narrative` skill uses emoji section headers; all other skills use plain markdown headings
 
 ## Workflow Connections
