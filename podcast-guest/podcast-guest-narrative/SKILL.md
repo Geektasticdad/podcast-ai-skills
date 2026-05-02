@@ -51,7 +51,7 @@ All scripture references must use the NIV translation. Produce every section bel
 **Length:** 150–250 words (approximately 1–2 minutes spoken)
 
 Write a warm and welcoming host script for Jason to read aloud at the start of the episode. It should:
-- Open with an engaging hook that draws listeners into the conversation.
+- Open with the `SHOW_SIGNON` phrase from the foundation, then transition into an engaging hook that draws listeners into the conversation.
 - Introduce the guest by name and give a brief, compelling description of who they are and what they do.
 - Mention the guest's website if one was provided.
 - Include a brief mention of any product, service, or event if applicable.
@@ -131,6 +131,7 @@ Omit the Product/Service/Event Questions and Listener Call-to-Action sections en
       "type": "prose",
       "heading": "🎤 Introduction",
       "paragraphs": [
+        "[SHOW_SIGNON]",
         "[Opening hook that draws listeners into the conversation.]",
         "[Introduction of the guest by name with a brief, compelling description of who they are and what they do. Mention website if provided.]",
         "[Brief mention of any product, service, or event if applicable. Omit this paragraph if none.]",

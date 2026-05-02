@@ -52,15 +52,18 @@ Use clear headings for each section. The document should be ready to read aloud 
 
 **Structure to Follow:**
 
-1. Hook the Listener
-   - Begin with a compelling question, thought, or vivid statement that grabs attention.
+1. Open with the Sign-On
+   - Begin with the exact text from the `SHOW_SIGNON` context variable set in the foundation.
+
+2. Hook the Listener
+   - Follow immediately with a compelling question, thought, or vivid statement that grabs attention.
    - Connect the listener emotionally to the topic of the episode.
    - Make the listener curious about what they will learn.
 
-2. Acknowledge the Series
+3. Acknowledge the Series
    - Briefly reference the series by name and note where this episode falls within it.
 
-3. Preview the Episode Themes
+4. Preview the Episode Themes
    - Briefly summarize the key ideas that will be explored in the episode.
    - Explain why this topic matters to everyday Christians.
    - Create anticipation for the deeper discussion ahead.
@@ -181,6 +184,7 @@ For the closing sign-off paragraph at the end of the Conclusion, use the exact t
     {
       "heading": "Introduction",
       "paragraphs": [
+        "[SHOW_SIGNON]",
         "HOOK -- [A vivid question, statement, or scenario that grabs the listener's attention and connects them emotionally to the topic.]",
         "SERIES ACKNOWLEDGMENT -- [Brief reference to the series by name and where this episode falls within it.]",
         "PREVIEW -- [Summary of the key ideas this episode will explore and why they matter to everyday Christians.]"

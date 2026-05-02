@@ -36,12 +36,14 @@ Before we start, I need a few details about your podcast. You only need to do th
 | `PODCAST_NAME` | Your podcast's name | (required) |
 | `HOST_NAME` | Your name | (required) |
 | `BIBLE_TRANSLATION` | Preferred Bible translation | NIV |
+| `SHOW_SIGNON` | Your episode opening phrase | Thank you for listening and welcome to the podcast, I am your host, Jason McConnell. |
 | `SHOW_SIGNOFF` | Your episode closing phrase | Until next time, keep loving your neighbors, dive into God's word daily, and may the Lord bless you and keep you, and fill you with His peace. Take care and God bless, and I'll see you in the next episode! |
 
 ```
 PODCAST_NAME: My Ministry Mission
 HOST_NAME: Jason McConnell
 BIBLE_TRANSLATION: NIV
+SHOW_SIGNON: Thank you for listening and welcome to the podcast, I am your host, Jason McConnell.
 SHOW_SIGNOFF: Until next time, keep loving your neighbors, dive into God's word daily, and may the Lord bless you and keep you, and fill you with His peace. Take care and God bless, and I'll see you in the next episode!
 ```
 
