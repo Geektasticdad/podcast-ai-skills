@@ -38,10 +38,10 @@ Once you have all three answers, produce the complete document. Do not ask any f
 After writing the document, do the following:
 
 1. Write the document content to a JSON file named `podcast-guest-temp.json` in the current working directory, following the JSON schema below.
-2. Locate `scripts/generate-docx.py` in this skill's directory.
-3. Run the script: `python scripts/generate-docx.py podcast-guest-temp.json`
-4. Delete `podcast-guest-temp.json` after the docx generates successfully.
-5. Report the docx filename and the directory it was saved to.
+2. Run the script using its full installed path:
+   `python "$env:USERPROFILE\.claude\skills\podcast-guest-narrative\scripts\generate-docx.py" podcast-guest-temp.json`
+3. Delete `podcast-guest-temp.json` after the docx generates successfully.
+4. Report the docx filename and the directory it was saved to.
 
 The docx saves to the current working directory as `Episode_[Episode Number]_[Guest Name].docx`.
 
