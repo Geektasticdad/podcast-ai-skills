@@ -19,7 +19,7 @@ pip install python-docx
 python <skill>/scripts/generate-docx.py <json-file>
 ```
 
-Each script requires `Episode TBD.docx` to be present in the skill's `assets/` subdirectory. This file is the branded Word style template. The script reads styles from the template rather than defining its own. The output docx is saved to the current working directory.
+Each script requires a branded Word style template in the skill's `assets/` subdirectory. For `podcast-episode-narrative` this is `Episode_Script.docx`; for the other two it is `Episode TBD.docx`. The script reads styles from the template rather than defining its own. The output docx is saved to the current working directory.
 
 ## Skill File Structure
 

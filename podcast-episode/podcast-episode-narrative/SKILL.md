@@ -18,7 +18,7 @@ This skill asks two questions before producing the narrative.
 pip install python-docx
 ```
 
-**Requires Episode TBD.docx** in the `assets/` subdirectory of this skill. This file provides the branded style template for the exported document.
+**Requires Episode_Script.docx** in the `assets/` subdirectory of this skill. This file provides the branded style template for the exported document.
 
 ## Inputs
 
@@ -59,8 +59,12 @@ The docx saves to the current working directory as `Episode_[Episode Number].doc
 
 ## JSON Schema
 
-Generate the narrative following the structure defined in `references/episode-template.json` in this skill's directory. Every paragraph slot must contain fully written narrative prose. Do not include any label prefixes or placeholder text in the final output.
+Generate the narrative following the structure defined in `references/episode-template.json` in this skill's directory. Every `text` field must contain fully written narrative prose. Do not leave placeholder text in the final output.
 
-For the opening sign-on, use the exact text from the `SHOW_SIGNON` context variable set in the foundation. For the closing sign-off, use the exact text from the `SHOW_SIGNOFF` context variable.
+Each content paragraph in the JSON is an object with two fields:
+- `label` — the bold section label exactly as shown in the template (e.g., `"HOOK"`, `"SCRIPTURE QUOTE"`)
+- `text` — the fully written spoken content for that paragraph (italic in the output)
 
-Scale the number of Topic Discussion subsections to match what the outline provides. Add or remove subsections as needed. Do not leave placeholder headings or paragraph text in the final JSON — every field must contain fully written content.
+Scale the number of Topic Discussion subsections to match what the outline provides. Add or remove subsections as needed. Each subsection requires a `topic_subheading` (the subsection title), a `time_marker` (approximate timestamp, e.g., `"~7:00"`), and a `paragraphs` array with all five labeled slots filled.
+
+Do not include `SHOW_SIGNON` or `SHOW_SIGNOFF` tokens — this template does not use them. Do not leave any `text` field empty or as placeholder in the final JSON.

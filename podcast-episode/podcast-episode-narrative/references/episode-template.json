@@ -3,76 +3,149 @@
   "episode": "Episode [N]",
   "sections": [
     {
-      "heading": "Introduction",
+      "heading": "INTRODUCTION",
       "paragraphs": [
-        "[SHOW_SIGNON]",
-        "[A vivid scenario, provocative question, or relatable moment that immediately connects the listener to the topic emotionally.]",
-        "[One or two sentences that name what the episode is and is not. Set the listener's expectation clearly.]",
-        "[Tell the listener what they will learn: the 2-3 big ideas and why each matters for their faith or daily life.]",
-        "[Briefly name the key scriptures that will anchor the episode. One sentence per passage.]"
+        {
+          "label": "HOOK",
+          "text": "[Begin with a vivid scenario, provocative question, or relatable moment that connects the listener emotionally to the topic.]"
+        },
+        {
+          "label": "BRIDGE",
+          "text": "[Name what this episode is and is not. Set the listener's expectation clearly.]"
+        },
+        {
+          "label": "PREVIEW",
+          "text": "[Tell the listener what they will learn: the 2-3 big ideas and why each matters for their faith or daily life.]"
+        },
+        {
+          "label": "ATTENTION GETTER",
+          "text": "[Close the introduction with a bold statement, surprising fact, or cliffhanger question that creates irresistible curiosity. Do NOT answer it yet -- let it hang.]"
+        }
       ]
     },
     {
-      "heading": "Topic Introduction",
+      "heading": "TOPIC INTRODUCTION",
       "paragraphs": [
-        "[Step back and reframe how the listener should think about this topic. Correct a common misconception or set up a fresh lens.]",
-        "[Show that this topic or tension appears throughout Scripture. Use 2-3 brief examples from the Old and New Testaments.]",
-        "[Describe what makes this topic uniquely challenging in the modern world. What pressures or trends make it harder today?]",
-        "[If available, include a relevant study, survey, or data point that grounds the cultural challenge in reality. Omit this paragraph if none.]",
-        "[Connect everything back to the listener. End with the central question the rest of the episode will answer.]"
+        {
+          "label": "REFRAME",
+          "text": "[Step back and reframe how the listener should think about this topic. Correct a common misconception or set up a fresh lens.]"
+        },
+        {
+          "label": "BIBLICAL PRECEDENT",
+          "text": "[Show that this topic appears throughout Scripture with 2-3 brief examples from the Old and New Testaments.]"
+        },
+        {
+          "label": "WHY IT MATTERS",
+          "text": "[Connect everything back to the listener. End with the central question the rest of the episode will answer.]"
+        }
       ]
     },
     {
-      "heading": "Topic Discussion",
+      "heading": "TOPIC DISCUSSION",
       "subsections": [
         {
           "topic_subheading": "[Subsection 1 Title]",
+          "time_marker": "~7:00",
           "paragraphs": [
-            "[State the key concept clearly. Name it, define it, and explain why it matters before going deeper.]",
-            "[If helpful, draw a contrast or distinction that prevents the listener from misunderstanding the concept.]",
-            "[Integrate a quote or insight from a trusted theologian or Christian author. Format: Author, in Book Title, insight or quote.]",
-            "[Introduce the main passage naturally, with a sentence of context before quoting it.]",
-            "[Quote the verse(s) in NIV. Format: Book Chapter:Verse — 'full quote' (NIV).]",
-            "[Explain what the original audience would have understood that modern readers might miss.]",
-            "[What does this biblical truth mean for the listener right now? Offer a specific, practical example or action.]"
+            {
+              "label": "INTRODUCE THE IDEA",
+              "text": "[State the key concept clearly. Name it, define it, and explain why it matters before going deeper.]"
+            },
+            {
+              "label": "SCRIPTURE QUOTE",
+              "text": "[Introduce and quote the anchor verse in NIV.]"
+            },
+            {
+              "label": "COMMENTARY INSIGHT",
+              "text": "[Integrate a theologian or commentary note in your own conversational style.]"
+            },
+            {
+              "label": "LISTENER ENGAGEMENT PROMPT",
+              "text": "[Re-engage listeners who may have drifted with a direct rhetorical question. Pause briefly before moving on.]"
+            },
+            {
+              "label": "APPLICATION",
+              "text": "[What does this biblical truth mean for the listener right now? Offer a specific, practical example or action.]"
+            }
           ]
         },
         {
           "topic_subheading": "[Subsection 2 Title]",
+          "time_marker": "~XX:00",
           "paragraphs": [
-            "[State the key concept and connect it to the previous subsection.]",
-            "[Name a common wrong response or pitfall before showing the biblical alternative.]",
-            "[Point to a specific person or moment in Scripture that demonstrates the right response.]",
-            "[Quote the key verse(s) in NIV with a sentence of setup.]",
-            "[Add a scholar or author's perspective that deepens or challenges the listener's thinking.]",
-            "[Explain anything about the original audience or historical setting that makes the passage land harder.]",
-            "[Where relevant, give the listener specific words or actions. What do they actually say or do this week?]"
+            {
+              "label": "INTRODUCE THE IDEA",
+              "text": "[State the key concept clearly. Name it, define it, and explain why it matters before going deeper.]"
+            },
+            {
+              "label": "SCRIPTURE QUOTE",
+              "text": "[Introduce and quote the anchor verse in NIV.]"
+            },
+            {
+              "label": "COMMENTARY INSIGHT",
+              "text": "[Integrate a theologian or commentary note in your own conversational style.]"
+            },
+            {
+              "label": "LISTENER ENGAGEMENT PROMPT",
+              "text": "[Re-engage listeners who may have drifted with a direct rhetorical question. Pause briefly before moving on.]"
+            },
+            {
+              "label": "APPLICATION",
+              "text": "[What does this biblical truth mean for the listener right now? Offer a specific, practical example or action.]"
+            }
           ]
         },
         {
           "topic_subheading": "[Subsection 3 Title]",
+          "time_marker": "~XX:00",
           "paragraphs": [
-            "[State the final key concept. This one often lands hardest or requires the most surrender.]",
-            "[Name the difficulty honestly. Why is this hard? What does the listener have to let go of?]",
-            "[First supporting verse in NIV, with context.]",
-            "[Second supporting verse in NIV, with context.]",
-            "[If applicable, reference a longer biblical story or parable that illustrates the concept in full.]",
-            "[Add a scholar's voice to deepen the theological point.]",
-            "[Close with a specific, doable action. What does surrendering to this truth look like in practice this week?]"
+            {
+              "label": "INTRODUCE THE IDEA",
+              "text": "[State the key concept clearly. Name it, define it, and explain why it matters before going deeper.]"
+            },
+            {
+              "label": "SCRIPTURE QUOTE",
+              "text": "[Introduce and quote the anchor verse in NIV.]"
+            },
+            {
+              "label": "COMMENTARY INSIGHT",
+              "text": "[Integrate a theologian or commentary note in your own conversational style.]"
+            },
+            {
+              "label": "LISTENER ENGAGEMENT PROMPT",
+              "text": "[Re-engage listeners who may have drifted with a direct rhetorical question. Pause briefly before moving on.]"
+            },
+            {
+              "label": "APPLICATION",
+              "text": "[What does this biblical truth mean for the listener right now? Offer a specific, practical example or action.]"
+            }
           ]
         }
       ]
     },
     {
-      "heading": "Conclusion",
+      "heading": "CONCLUSION",
       "paragraphs": [
-        "['Let me bring this home.' Or a similar phrase that signals the close.]",
-        "[Briefly recap the 2-3 most important ideas from the episode. Each idea in one sentence.]",
-        "[Restate the central message of the episode in 1-2 clear sentences. The one thing they should walk away knowing.]",
-        "[Give them one specific, simple thing to do this week. Make it concrete and doable.]",
-        "[Introduce and quote the benediction or closing verse in NIV.]",
-        "[One final uplifting sentence that sends the listener off feeling encouraged, not overwhelmed.]",
-        "[SHOW_SIGNOFF]"
+        {
+          "label": "SUMMARY",
+          "text": "[Briefly recap the 2-3 most important ideas from the episode. Each idea in one sentence.]"
+        },
+        {
+          "label": "CORE TAKEAWAY",
+          "text": "[Restate the central message of the episode in 1-2 clear sentences.]"
+        },
+        {
+          "label": "LISTENER ENGAGEMENT PROMPT",
+          "text": "[One final question to send them away reflecting. Make it personal and action-oriented.]"
+        },
+        {
+          "label": "PRACTICAL CALL TO ACTION",
+          "text": "[Give them one specific, simple thing to do this week.]"
+        },
+        {
+          "label": "CLOSING SCRIPTURE",
+          "text": "[Introduce and quote the benediction or closing verse in NIV.]"
+        }
       ]
     }
   ],
