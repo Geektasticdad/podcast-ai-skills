@@ -81,3 +81,5 @@ podcast-guest-research → podcast-guest-outline   → podcast-guest-narrative  
 ```
 
 The `podcast-series-outline` skill accepts a context log (from `podcast-series-context-log`) as an optional input to prevent scripture repetition and honor previous episode teasers across a series.
+
+The `podcast-episode-ideas`, `podcast-episode-outline`, and `podcast-episode-narrative` skills support an optional progressive draft file (`episode-{theme-slug}-draft.json`) that accumulates episode data across all three stages. When provided at skill startup, pre-answered questions are skipped. The schema is defined in `podcast-episode/references/episode-draft-schema.json`. The file lives in the user's working directory alongside the final docx.

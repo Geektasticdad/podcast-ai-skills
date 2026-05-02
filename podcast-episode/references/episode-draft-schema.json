@@ -1,0 +1,54 @@
+{
+  "_comment": "Progressive episode draft schema. Written by podcast-episode-ideas, updated by podcast-episode-outline and podcast-episode-narrative. Optional at every stage — skills fall back to copy-paste input when this file is absent.",
+  "meta": {
+    "schema_version": "1.0",
+    "created_at": "ISO-8601 timestamp set by podcast-episode-ideas",
+    "last_updated_at": "ISO-8601 timestamp updated by each skill",
+    "theme": "The original theme string entered by the user",
+    "theme_slug": "Lowercase hyphenated version of theme used in the filename",
+    "draft_file": "episode-{theme-slug}-draft.json",
+    "stage": "ideas | outline | narrative | complete"
+  },
+  "ideas": {
+    "theme": "The original theme string",
+    "selected_idea": {
+      "title": "Episode title chosen by the user",
+      "overview": "2-3 sentence overview from podcast-episode-ideas output",
+      "key_scriptures": [
+        "Verse 1 reference and text (NIV)",
+        "Verse 2 reference and text (NIV)"
+      ],
+      "themes": [
+        "Theological or practical theme 1",
+        "Theological or practical theme 2"
+      ],
+      "listener_takeaway": "One to two sentences describing the key spiritual insight or life application"
+    }
+  },
+  "outline": {
+    "episode_length_minutes": 35,
+    "outline_text": "Full verbatim outline text as produced in chat by podcast-episode-outline, including all headings and subsections",
+    "potential_titles": [
+      "Title 1",
+      "Title 2",
+      "Title 3",
+      "Title 4",
+      "Title 5",
+      "Title 6",
+      "Title 7",
+      "Title 8",
+      "Title 9",
+      "Title 10"
+    ],
+    "selected_title": "The title the user chose, or null if deferred to the narrative stage"
+  },
+  "narrative": {
+    "_comment": "Fields mirror episode-template.json exactly. The narrative skill extracts these fields and writes them as podcast-episode-temp.json for generate-docx.py.",
+    "episode_number": "42 or TBD",
+    "title": "Final episode title used in the docx",
+    "episode": "Episode 42",
+    "sections": [],
+    "references": [],
+    "output": "Episode_42.docx"
+  }
+}

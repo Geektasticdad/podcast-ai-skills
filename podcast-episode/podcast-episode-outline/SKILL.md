@@ -17,15 +17,23 @@ Output is plain text directly in the chat. Do not create or offer to export a Wo
 
 ## Inputs
 
-Before building the outline, ask the user two questions in sequence. Wait for each answer before asking the next.
+Ask the user the following questions in sequence. Wait for each answer before asking the next.
 
-**Question 1:**
-"Paste the episode details from your `podcast-episode-ideas` output for the episode you want to outline."
+**Question 1 (optional draft file):**
+"Do you have an episode draft JSON file from the ideas stage? If yes, provide the file path. If no, press enter."
+
+If a valid file path is provided, read and parse the draft JSON:
+- If `ideas.selected_idea` is set, skip Question 2. Confirm: "Using episode: [ideas.selected_idea.title]. Continuing."
+- If `outline.episode_length_minutes` is already set, skip Question 3. Confirm: "Using episode length: [value] minutes. Continuing."
+- If `outline.outline_text` is already populated, ask: "This draft already has a completed outline. Do you want to regenerate it, or proceed to `podcast-episode-narrative`?"
 
 **Question 2:**
+"Paste the episode details from your `podcast-episode-ideas` output for the episode you want to outline."
+
+**Question 3:**
 "How long should this episode be in minutes?"
 
-Once you have both answers, proceed to build the outline. Do not ask any further questions.
+Once you have all needed answers, proceed to build the outline. Do not ask any further questions.
 
 ---
 
@@ -125,3 +133,21 @@ List them numbered 1–10.
 ## Next Step
 
 Once the outline is approved, proceed to `podcast-episode-narrative` to write the full spoken narrative for each section.
+
+---
+
+## Draft File Output
+
+After displaying the outline and potential titles in chat:
+
+1. Ask: "Which title will you use? Enter the number (1–10), or type 'later' to decide at the narrative stage."
+2. Update (or create) the draft JSON following the schema in `podcast-episode/references/episode-draft-schema.json`:
+   - `meta.last_updated_at` = current timestamp (ISO-8601)
+   - `meta.stage` = "outline"
+   - `outline.episode_length_minutes` = the value the user provided
+   - `outline.outline_text` = the full outline text exactly as produced in this session (verbatim, preserving all headings and formatting)
+   - `outline.potential_titles` = the 10 titles as an array
+   - `outline.selected_title` = the title the user selected, or null if "later"
+   - If a title was selected, also update `ideas.selected_idea.title` to match
+3. If a draft file was loaded in Question 1, write the updated file back to the same path. If no draft file was loaded, slugify the episode topic and write to `episode-{slug}-draft.json` in the current working directory.
+4. Report: "Draft updated: [filename] (stage: outline). Pass this file to `podcast-episode-narrative` to skip re-entering the outline."
