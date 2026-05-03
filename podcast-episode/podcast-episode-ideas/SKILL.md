@@ -17,17 +17,16 @@ Output is plain text directly in the chat. Do not create or offer to export a Wo
 
 Ask the user the following questions in sequence. Wait for each answer before asking the next.
 
-**Question 1 (optional draft file):**
-"Do you have an existing episode draft JSON file? If yes, provide the file path. If no, press enter to start fresh."
-
-If a valid file path is provided, read and parse the draft JSON:
-- If `ideas.theme` is already set, skip Question 2. Confirm: "Using theme: [theme]. Continuing."
-- If `ideas.selected_idea` is already set, ask: "This draft already has a selected idea: [title]. Do you want to keep it and skip generating new ideas, or generate fresh ideas for this theme?" If they keep it, skip Questions 2 and 3 and proceed directly to the Draft File Output section.
-
-**Question 2:**
+**Question 1:**
 "What theme do you want to explore? Give me a word, phrase, or topic."
 
-**Question 3:**
+After receiving the theme, slugify it (lowercase, spaces and special characters replaced with hyphens, multiple hyphens collapsed, leading/trailing hyphens stripped) and check whether `episode-{slug}-draft.json` exists in the current working directory. Do this silently — do not ask the user about it.
+
+- If the file exists, read and parse it.
+  - If `ideas.selected_idea` is already set, say: "Found existing draft for this theme with a selected idea: [title]. Do you want to keep it and skip generating new ideas, or generate fresh ideas?" If they keep it, skip Question 2 and proceed directly to the Draft File Output section.
+  - If only `ideas.theme` is set (no selected idea), proceed to Question 2 with the theme pre-filled.
+
+**Question 2:**
 "How many episode ideas do you want? You can give a specific number (e.g., 5) or a range (e.g., 3–6)."
 
 Once you have all needed answers, generate the ideas immediately. Do not ask any further questions.
@@ -74,7 +73,7 @@ Repeat for each episode idea.
 After displaying all ideas in chat:
 
 1. Ask: "Which idea do you want to develop? Enter the number."
-2. Build the draft filename from the theme: convert to lowercase, replace spaces and special characters with hyphens, collapse multiple hyphens to one, strip leading and trailing hyphens. Example: "Forgiveness and Grace" becomes `forgiveness-and-grace`. Filename: `episode-{slug}-draft.json`. If the user provided a path to an existing draft file in Question 1, update that file in place.
+2. Build the draft filename from the theme: convert to lowercase, replace spaces and special characters with hyphens, collapse multiple hyphens to one, strip leading and trailing hyphens. Example: "Forgiveness and Grace" becomes `forgiveness-and-grace`. Filename: `episode-{slug}-draft.json`. If an existing draft file was loaded on startup, update that file in place.
 3. Populate the draft JSON following the schema in `podcast-episode/references/episode-draft-schema.json`:
    - `meta.schema_version` = "1.0"
    - `meta.created_at` = current timestamp (ISO-8601); preserve existing value if updating a draft
@@ -83,4 +82,4 @@ After displaying all ideas in chat:
    - `ideas.theme` = the theme string the user entered
    - `ideas.selected_idea` = the idea the user selected, with `title`, `overview`, `key_scriptures` (array), `themes` (array), `listener_takeaway`
 4. Write the draft JSON to the current working directory.
-5. Report: "Draft saved: [filename]. Pass this file to `podcast-episode-outline` to skip re-entering the episode details."
+5. Report: "Draft saved: [filename]."

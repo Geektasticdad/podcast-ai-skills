@@ -9,8 +9,6 @@ This skill takes a completed standalone episode outline and writes the full spok
 
 This is a standalone episode narrative. There is no series recap section.
 
-This skill asks two questions before producing the narrative.
-
 **Requires:** Load the Research Foundation skill (`foundation/SKILL.md`) alongside this skill before you begin.
 
 **Requires python-docx.** If not installed:
@@ -22,20 +20,21 @@ pip install python-docx
 
 ## Inputs
 
-Ask the user the following questions in sequence. Wait for each answer before asking the next.
+**On startup:** Scan the current working directory for files matching `episode-*-draft.json`. Do this silently — do not ask the user about it.
 
-**Question 1 (optional draft file):**
-"Do you have an episode draft JSON file from the outline stage? If yes, provide the file path. If no, press enter."
+- If exactly one file is found, read and parse it. Confirm: "Found draft: [filename]."
+- If multiple files are found, ask: "Found multiple episode drafts — which one do you want to use?" and list the filenames numbered. Wait for the user to pick one, then load it.
+- If no files are found, proceed with manual input (Question 1 below).
 
-If a valid file path is provided, read and parse the draft JSON:
-- If `outline.outline_text` is set, skip Question 2. Pre-fill the episode title from `outline.selected_title` if set, or from `ideas.selected_idea.title` as a fallback. Confirm: "Using outline for: [title]. Continuing."
-- If `narrative.episode_number` is already set, skip Question 3. Confirm: "Using episode number: [value]. Continuing."
+Once a draft file is loaded:
+- If `outline.outline_text` is set, skip Question 1. Pre-fill the episode title from `outline.selected_title` if set, or from `ideas.selected_idea.title` as a fallback. Confirm: "Using outline for: [title]."
+- If `narrative.episode_number` is already set, skip Question 2. Confirm: "Using episode number: [value]."
 - If `meta.stage` is already "complete", ask: "This draft already has a completed narrative. Do you want to regenerate it?"
 
-**Question 2:**
+**Question 1 (only if no draft file was loaded):**
 "Paste the full output from your `podcast-episode-outline` for the episode you want to write."
 
-**Question 3:**
+**Question 2:**
 "What is the episode number? If not yet assigned, type TBD."
 
 Once you have all needed answers, produce the full narrative. Do not ask any further questions.
@@ -48,11 +47,11 @@ After writing the narrative, do the following:
 2. Locate `scripts/generate-docx.py` in this skill's directory.
 3. Run the script: `python scripts/generate-docx.py podcast-episode-temp.json`
 4. Delete `podcast-episode-temp.json` after the docx generates successfully.
-5. If a draft file was loaded in Question 1:
+5. If a draft file was loaded on startup:
    - Update the draft JSON: populate `narrative.episode_number`, `narrative.title`, `narrative.episode`, `narrative.sections`, `narrative.references`, `narrative.output` from the completed narrative payload; set `meta.stage` = "complete" and `meta.last_updated_at` to the current timestamp.
    - Write the updated draft file back to the same path.
    - Report: "Draft updated: [filename] (stage: complete)."
-   If no draft file was loaded, ask: "Would you like to save the completed narrative to a draft file for archiving? Type a filename or 'no'."
+   If no draft file was loaded, derive a slug from the episode title and write to `episode-{slug}-draft.json` in the current working directory. Report: "Draft saved: [filename] (stage: complete)."
 6. Report the docx filename and the directory it was saved to.
 
 The docx saves to the current working directory as `Episode_[Episode Number].docx`.
