@@ -24,7 +24,8 @@
       "Bash(git *)",
       "Bash(python -c ' *)",
       "Bash(python -c \"import sys; sys.stdout.buffer.write\\(sys.stdin.buffer.read\\(\\)\\)\")",
-      "Bash(python scripts/generate-docx.py references/episode-template.json)"
+      "Bash(python scripts/generate-docx.py references/episode-template.json)",
+      "Bash(Select-Object FullName)"
     ]
   }
 }
